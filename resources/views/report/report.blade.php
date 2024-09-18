@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Report')
+@section('title','Inventario | Reportes')
 
 
-@section('page-title','Report')
+@section('page-title','Reportes')
 
 
 @section('content')
@@ -18,7 +18,7 @@
 			<div class="header">
 				<h2>
 					
-					Generate Report
+					Reporte de cantidad en Stock
 					
 				</h2>
 			</div>
@@ -45,7 +45,7 @@
 
 
 					<div class="row text-center">
-						<button type="submit" class="btn bg-teal">Get Report</button>
+						<button type="submit" class="btn bg-teal">Generar reporte</button>
 					</div>
 
 

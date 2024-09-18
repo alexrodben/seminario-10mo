@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Stock-Report')
+@section('title','Inventario | Reporte de Stock')
 
+@section('page-title','Reporte de Stock')
 
-@section('page-title','Stock Report')
 
 
 @section('content')
@@ -18,7 +18,7 @@
 			<div class="header">
 				<h2>
 					
-					Stock Report
+					Reporte de cantidad de stock
 					
 				</h2>
 
@@ -52,20 +52,20 @@
 							</tr>  				
 
 							<tr style="border: none !important;">
-								<td colspan="11" style="border: none !important;"><p style="text-align: center;font-weight: bold;">Stock Report from {{ date('j M Y',strtotime($start_date)) }} To {{ date('j M Y',strtotime($end_date)) }}</p></td>
+								<td colspan="11" style="border: none !important;"><p style="text-align: center;font-weight: bold;">Reporte de cantidad de Stock desde {{ date('j M Y',strtotime($start_date)) }} a {{ date('j M Y',strtotime($end_date)) }}</p></td>
 
 							</tr>
 							<tr>
-								<th>Category</th>
-								<th>Product</th>
+								<th>Categoría</th>
+								<th>Producto</th>
 								<th>Comprobante</th>
 								<th>Fecha</th>
-								<th>Entry By</th>
-								<th>Buying Price</th>
-								<th>Selling Price</th>
-								<th>Stock Quantity</th>
-								<th>Sold Quantity</th>
-								<th>Current Quantity</th>
+								<th>Entrada por</th>
+								<th>Precio de compra</th>
+								<th>Precio de venta</th>
+								<th>Existencia total</th>
+								<th>Existencia vendida</th>
+								<th>Existencia actual</th>
 							</tr>
 						</thead>
 

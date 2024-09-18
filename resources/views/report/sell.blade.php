@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Sell-Report')
+@section('title','Inventorio | Reporte de ventas')
 
 
-@section('page-title','Sell Report')
+@section('page-title','Reporte de ventas')
 
 
 @section('content')
@@ -56,17 +56,17 @@
 
 							</tr>
 							<tr>
-								<th>Product</th>
+								<th>Producto</th>
 								<th>Comprobante</th>
-								<th>Sold Date</th>
-								<th>Customer</th>
-								<th>Seller</th>
-								<th>Quantity</th>
-								<th>Unit Buying Price</th>
-								<th>Unit Selling Price</th>
-								<th>Disount Importe</th>
-								<th>Total Buying Importe</th>
-								<th>Total Selling Importe</th>
+								<th>Fecha de venta</th>
+								<th>Cliente</th>
+								<th>Vendedor</th>
+								<th>Cantidad</th>
+								<th>Precio unitario de compra</th>
+								<th>Precio unitario de venta</th>
+								<th>Descuento de importe</th>
+								<th>Importe de compra total</th>
+								<th>Importe de venta total</th>
 							
 							</tr>
 						</thead>
