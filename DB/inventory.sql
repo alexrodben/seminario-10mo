@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 -- Volcando datos para la tabla db_inventory.categories: ~20 rows (aproximadamente)
 DELETE FROM `categories`;
 INSERT INTO `categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-	(4, 'Popsocket', 1, '2024-04-16 03:14:24', '2024-04-16 03:14:24');
+	(1, 'Producto en blanco', 1, '2024-04-16 03:14:24', '2024-04-16 03:14:24');
 
 
 -- Volcando estructura para tabla db_inventory.companies
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `companies` (
 -- Volcando datos para la tabla db_inventory.companies: ~0 rows (aproximadamente)
 DELETE FROM `companies`;
 INSERT INTO `companies` (`id`, `name`, `phone`, `address`, `created_at`, `updated_at`) VALUES
-	(1, 'StockInventarios', '22208941', 'San Miguel Petapa, zona 7, Ciudad de Guatemala', NULL, '2024-04-17 05:35:09');
+	(1, 'Stock HC', '22208941', 'San Miguel Petapa, zona 7, Ciudad de Guatemala', NULL, '2024-04-17 05:35:09');
 
 -- Volcando estructura para tabla db_inventory.customers
 CREATE TABLE IF NOT EXISTS `customers` (
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 -- Volcando datos para la tabla db_inventory.customers: ~16 rows (aproximadamente)
 DELETE FROM `customers`;
 INSERT INTO `customers` (`id`, `customer_name`, `email`, `phone`, `address`, `status`, `created_at`, `updated_at`) VALUES
-	(37, 'Katheryn Gonzalez', 'kathy@example.com', '555-1234', 'Zona 7, Ciudad de Guatemala', 1, '2024-04-17 02:08:05', '2024-04-17 02:08:05');
+	(2, 'Katheryn Gonzalez', 'kathy@example.com', '555-1234', 'Zona 7, Ciudad de Guatemala', 1, '2024-04-17 02:08:05', '2024-04-17 02:08:05');
 
 -- Volcando estructura para tabla db_inventory.menus
 CREATE TABLE IF NOT EXISTS `menus` (
@@ -171,8 +171,8 @@ CREATE TABLE IF NOT EXISTS `payments` (
 -- Volcando datos para la tabla db_inventory.payments: ~2 rows (aproximadamente)
 DELETE FROM `payments`;
 INSERT INTO `payments` (`id`, `sell_id`, `customer_id`, `user_id`, `date`, `paid_in`, `bank_information`, `amount`, `created_at`, `updated_at`) VALUES
-	(56, 51, 40, 12, '2023-04-19', 'efectivo', NULL, 412, '2023-04-17 05:34:02', '2023-04-17 05:34:02'),
-	(57, 51, 40, 12, '2023-04-20', 'efectivo', NULL, 0.5, '2023-04-17 05:34:22', '2023-04-17 05:34:22');
+	(56, 51, 40, 12, '2024-04-19', 'efectivo', NULL, 412, '2024-04-17 05:34:02', '2023-04-17 05:34:02'),
+	(57, 51, 40, 12, '2024-04-20', 'efectivo', NULL, 0.5, '2024-04-17 05:34:22', '2023-04-17 05:34:22');
 
 -- Volcando estructura para tabla db_inventory.permissions
 CREATE TABLE IF NOT EXISTS `permissions` (
@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Volcando datos para la tabla db_inventory.products: 
 DELETE FROM `products`;
 INSERT INTO `products` (`id`, `category_id`, `product_name`, `details`, `status`, `created_at`, `updated_at`) VALUES
-	(30, 34, 'Mousepad 18x14', 'Mousepad pequeno', 1, '2023-04-16 03:18:28', '2023-04-16 05:54:34');
+	(4, 4, 'Mousepad 18x14', 'Mousepad pequeno', 1, '2024-04-16 03:18:28', '2024-04-16 05:54:34');
 
 -- Volcando estructura para tabla db_inventory.roles
 CREATE TABLE IF NOT EXISTS `roles` (
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- Volcando datos para la tabla db_inventory.roles: ~4 rows (aproximadamente)
 DELETE FROM `roles`;
 INSERT INTO `roles` (`id`, `role_name`, `created_at`, `updated_at`) VALUES
-	(2, 'Gerente', '2024-02-12 03:59:54', '2024-04-17 04:53:28'),
+	(2, 'Superadministrador', '2024-02-12 03:59:54', '2024-04-17 04:53:28'),
 	(3, 'Encargado', '2024-02-13 00:07:41', '2024-04-17 04:35:56');
 
 -- Volcando estructura para tabla db_inventory.sells
@@ -283,10 +283,7 @@ CREATE TABLE IF NOT EXISTS `sells` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla db_inventory.sells: ~0 rows (aproximadamente)
-DELETE FROM `sells`;
-INSERT INTO `sells` (`id`, `user_id`, `customer_id`, `branch_id`, `total_amount`, `paid_amount`, `sell_date`, `discount_amount`, `payment_method`, `payment_status`, `created_at`, `updated_at`) VALUES
-	(51, 12, 40, 1, 412.5, 412.5, '2023-04-17', 0, 2, 1, '2023-04-17 05:33:31', '2023-04-17 05:34:22');
+
 
 -- Volcando estructura para tabla db_inventory.sell_details
 CREATE TABLE IF NOT EXISTS `sell_details` (
@@ -320,10 +317,6 @@ CREATE TABLE IF NOT EXISTS `sell_details` (
   KEY `sell_id` (`sell_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla db_inventory.sell_details: ~0 rows (aproximadamente)
-DELETE FROM `sell_details`;
-INSERT INTO `sell_details` (`id`, `stock_id`, `sell_id`, `product_id`, `category_id`, `vendor_id`, `user_id`, `chalan_no`, `selling_date`, `customer_id`, `sold_quantity`, `buy_price`, `sold_price`, `total_buy_price`, `total_sold_price`, `discount`, `discount_type`, `discount_amount`, `created_at`, `updated_at`) VALUES
-	(70, 55, 51, 30, 34, 81, 12, '2023-04-16', '2023-04-17', '40', 33, 9.8, 12.5, 323.40000000000003, 412.5, 0, 1, 0, '2023-04-17 05:33:31', '2023-04-17 05:33:31');
 
 -- Volcando estructura para tabla db_inventory.stocks
 CREATE TABLE IF NOT EXISTS `stocks` (
@@ -350,11 +343,6 @@ CREATE TABLE IF NOT EXISTS `stocks` (
   KEY `stock_quantity` (`stock_quantity`)
 ) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla db_inventory.stocks: ~2 rows (aproximadamente)
-DELETE FROM `stocks`;
-INSERT INTO `stocks` (`id`, `category_id`, `product_code`, `product_id`, `vendor_id`, `user_id`, `chalan_no`, `buying_price`, `selling_price`, `discount`, `stock_quantity`, `current_quantity`, `note`, `status`, `created_at`, `updated_at`) VALUES
-	(55, 34, '1681681567', 30, 81, 12, '2023-04-16', 9.8, 12.5, 0, 100, 67, NULL, 1, '2023-04-16 22:46:07', '2023-04-17 05:33:31'),
-	(56, 37, '1681705778', 67, 81, 12, '2023-04-16', 189.99, 249.99, 0, 48, 48, NULL, 1, '2023-04-17 05:29:38', '2023-04-17 05:29:38');
 
 -- Volcando estructura para tabla db_inventory.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -373,8 +361,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Volcando datos para la tabla db_inventory.users: ~1 rows (aproximadamente)
 DELETE FROM `users`;
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `branch_id`, `role_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(12, 'Melissa Alvarez', 'mel@example.com', '$2y$10$W/nqTuN0X.JaGtGBkpw01OTSL0I3aShYL9QusP8Q5kIZ2AviqQHKC', 1, 2, '0IpIeWT8blxXuKuoPDK4JaME50fQqTotSj0ACvRJjGJJBOYjczulzbBtcPOx', '2024-07-31 17:27:25', '2024-04-17 05:20:18');
+INSERT INTO users (id, name, email, password, branch_id, role_id, remember_token, created_at, updated_at) VALUES (12, 'Katherine Escolin', 'escolinkate@gmail.com', '$2y$10$W/nqTuN0X.JaGtGBkpw01OTSL0I3aShYL9QusP8Q5kIZ2AviqQHKC', 1, 2, '0IpIeWT8blxXuKuoPDK4JaME50fQqTotSj0ACvRJjGJJBOYjczulzbBtcPOx', '2024-07-31 17:27:25', '2024-04-17 05:20:18');
 
 -- Volcando estructura para tabla db_inventory.vendors
 CREATE TABLE IF NOT EXISTS `vendors` (
