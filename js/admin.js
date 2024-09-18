@@ -13,7 +13,7 @@ $.AdminBSB.options = {
         blue: '#2196F3',
         lightBlue: '#03A9F4',
         cyan: '#00BCD4',
-        teal: '#009688',
+        teal: '#1e92c9',
         green: '#4CAF50',
         lightGreen: '#8BC34A',
         lime: '#CDDC39',
@@ -25,7 +25,7 @@ $.AdminBSB.options = {
         grey: '#9E9E9E',
         blueGrey: '#607D8B',
         black: '#000000',
-        white: '#ffffff'
+        white: '#a09898fff'
     },
     leftSideBar: {
         scrollColor: 'rgba(0,0,0,0.5)',

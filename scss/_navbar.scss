@@ -16,7 +16,7 @@
     }
     .navbar-toggle {
         text-decoration: none;
-        color: #fff;
+        color: #a09898;
         width: 20px;
         height: 20px;
         margin-top: -4px;
@@ -117,7 +117,7 @@
 $val in $colors {
     .col-#{$key} {
         .navbar {
-            @include navbar-link-color(#fff, #000, .95);
+            @include navbar-link-color(#a09898, #000, .95);
             // @include navbar-link-color(rgba(0,0,0,0.85), #000, .95);
         }
     }

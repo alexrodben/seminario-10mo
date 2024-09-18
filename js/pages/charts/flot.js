@@ -197,7 +197,7 @@ $(function () {
 
     //PIE CHART ==========================================================================================
     var pieChartData = [], pieChartSeries = 4;
-    var pieChartColors = ['#E91E63', '#03A9F4', '#FFC107', '#009688'];
+    var pieChartColors = ['#E91E63', '#03A9F4', '#FFC107', '#1e92c9'];
     var pieChartDatas = [45, 17, 28, 10];
 
     for (var i = 0; i < pieChartSeries; i++) {

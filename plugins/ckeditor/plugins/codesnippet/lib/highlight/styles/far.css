@@ -54,7 +54,7 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .bash .hljs-variable,
 .tex .hljs-special,
 .clojure .hljs-built_in {
-  color: #FFF;
+  color: #a09898;
 }
 
 .hljs-comment,

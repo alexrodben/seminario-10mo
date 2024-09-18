@@ -116,12 +116,12 @@
 @each $key, $val in $colors {
     .bg-#{$key} {
         background-color: $val !important;
-        color: #fff;
+        color: #a09898;
 
         .content {
             .text,
             .number {
-                color: #fff !important;
+                color: #a09898 !important;
             }
         }
     }

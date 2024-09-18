@@ -21,7 +21,7 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">NAVEGACIÓN PRINCIPAL</li>
+                    <li class="header">NAVEGACIÓN</li>
                     <li @if(Route::currentRouteName()=='' ) class="active" @endif>
                         <a href="{{ url('/') }}">
                             <i class="material-icons">dashboard</i>

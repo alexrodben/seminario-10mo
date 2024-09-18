@@ -2,10 +2,10 @@
     @include border-radius(0);
     @include box-shadow(none);
     border: none;
-    color: #fff !important;
+    color: #a09898 !important;
 
     .alert-link {
-        color: #fff;
+        color: #a09898;
         text-decoration: underline;
         font-weight: bold;
     }
@@ -29,7 +29,7 @@
 
 .alert-dismissible {
     .close {
-        color: #fff;
+        color: #a09898;
         opacity: 1;
         border: none;
         text-shadow: none;

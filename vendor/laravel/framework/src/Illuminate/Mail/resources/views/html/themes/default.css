@@ -118,7 +118,7 @@ img {
 /* Body */
 
 .body {
-    background-color: #FFFFFF;
+    background-color: #a09898FFF;
     border-bottom: 1px solid #EDEFF2;
     border-top: 1px solid #EDEFF2;
     margin: 0;
@@ -130,7 +130,7 @@ img {
 }
 
 .inner-body {
-    background-color: #FFFFFF;
+    background-color: #a09898FFF;
     margin: 0 auto;
     padding: 0;
     width: 570px;
@@ -212,7 +212,7 @@ img {
 .button {
     border-radius: 3px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
-    color: #FFF;
+    color: #a09898;
     display: inline-block;
     text-decoration: none;
     -webkit-text-size-adjust: none;
@@ -265,7 +265,7 @@ img {
 /* Promotions */
 
 .promotion {
-    background-color: #FFFFFF;
+    background-color: #a09898FFF;
     border: 2px dashed #9BA2AB;
     margin: 0;
     margin-bottom: 25px;

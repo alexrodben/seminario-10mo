@@ -43,7 +43,7 @@
 
         li {
             a {
-                color: #fff;
+                color: #a09898;
                 font-weight: bold;
 
                 .material-icons {
@@ -51,11 +51,11 @@
                 }
             }
 
-            color: #fff !important;
+            color: #a09898 !important;
         }
 
         li + li:before {
-            color: #fff;
+            color: #a09898;
         }
     }
 }

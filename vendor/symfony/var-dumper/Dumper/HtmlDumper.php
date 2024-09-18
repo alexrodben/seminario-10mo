@@ -37,9 +37,9 @@ class HtmlDumper extends CliDumper
         'str' => 'font-weight:bold; color:#56DB3A',
         'note' => 'color:#1299DA',
         'ref' => 'color:#A0A0A0',
-        'public' => 'color:#FFFFFF',
-        'protected' => 'color:#FFFFFF',
-        'private' => 'color:#FFFFFF',
+        'public' => 'color:#a09898FFF',
+        'protected' => 'color:#a09898FFF',
+        'private' => 'color:#a09898FFF',
         'meta' => 'color:#B729D9',
         'key' => 'color:#56DB3A',
         'index' => 'color:#1299DA',
@@ -323,7 +323,7 @@ return function (root, x) {
             e.target.style.cursor = "pointer";
         } else if (a = idRx.exec(a.className)) {
             try {
-                refStyle.innerHTML = 'pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}';
+                refStyle.innerHTML = 'pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #a09898 !important; border-radius: 2px}';
             } catch (e) {
             }
         }
@@ -690,7 +690,7 @@ pre.sf-dump .sf-dump-search-wrapper > * {
     height: 21px;
     font-weight: normal;
     border-radius: 0;
-    background: #FFF;
+    background: #a09898;
     color: #757575;
     border: 1px solid #BBB;
 }

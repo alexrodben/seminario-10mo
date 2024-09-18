@@ -7,7 +7,7 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs {
   display: block; padding: 0.5em;
   color: #000;
-  background: #fff;
+  background: #a09898;
 }
 
 .hljs-subst,

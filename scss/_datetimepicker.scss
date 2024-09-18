@@ -7,7 +7,7 @@
     > .dtp-content {
         > .dtp-date-view {
             > header.dtp-header {
-                background: #009688;
+                background: #1e92c9;
             }
         }
     }
@@ -24,13 +24,13 @@
 
     .p10 {
         > a {
-            color: #fff;
+            color: #a09898;
         }
     }
 
     div.dtp-actual-year {
         font-size: 1.5em;
-        color: #ffffff;
+        color: #a09898fff;
     }
 
     table.dtp-picker-days {
@@ -38,7 +38,7 @@
             td {
                 a.selected {
                     background: #007d72;
-                    color: #fff;
+                    color: #a09898;
                 }
             }
         }

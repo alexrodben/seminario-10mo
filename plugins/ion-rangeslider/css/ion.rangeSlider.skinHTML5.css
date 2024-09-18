@@ -16,7 +16,7 @@
 .irs-line {
     height: 10px; top: 33px;
     background: #EEE;
-    background: linear-gradient(to bottom, #DDD -50%, #FFF 150%); /* W3C */
+    background: linear-gradient(to bottom, #DDD -50%, #a09898 150%); /* W3C */
     border: 1px solid #CCC;
     border-radius: 16px;
     -moz-border-radius: 16px;
@@ -73,7 +73,7 @@
 }
 
 .irs-slider.state_hover, .irs-slider:hover {
-    background: #FFF;
+    background: #a09898;
 }
 
 .irs-min, .irs-max {
@@ -92,7 +92,7 @@
 }
 
 .irs-from, .irs-to, .irs-single {
-    color: #fff;
+    color: #a09898;
     font-size: 14px; line-height: 1.333;
     text-shadow: none;
     padding: 1px 5px;

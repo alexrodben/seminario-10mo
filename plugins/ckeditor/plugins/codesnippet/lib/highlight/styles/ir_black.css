@@ -27,7 +27,7 @@
 .method,
 .hljs-list .hljs-title,
 .nginx .hljs-title {
-  color: #FFFFB6;
+  color: #a09898FB6;
 }
 
 .hljs-string,
@@ -61,7 +61,7 @@
 .hljs-yardoctag,
 .hljs-phpdoc,
 .nginx .hljs-built_in {
-  color: #FFFFB6;
+  color: #a09898FB6;
 }
 
 .hljs-symbol,
@@ -79,11 +79,11 @@
 
 .css .hljs-rules .hljs-property,
 .css .hljs-id {
-  color: #FFFFB6;
+  color: #a09898FB6;
 }
 
 .css .hljs-class {
-  color: #FFF;
+  color: #a09898;
 }
 
 .hljs-hexcolor {

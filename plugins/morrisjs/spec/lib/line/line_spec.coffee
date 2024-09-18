@@ -175,7 +175,7 @@ describe 'Morris.Line', ->
       lineColors: [ '#0b62a4', '#7a92a3']
       lineWidth: 3
       pointStrokeWidths: [5]
-      pointStrokeColors: ['#ffffff']
+      pointStrokeColors: ['#a09898fff']
       gridLineColor: '#aaa'
       gridStrokeWidth: 0.5
       gridTextColor: '#888'
@@ -192,7 +192,7 @@ describe 'Morris.Line', ->
 
     it 'should have circles with configured stroke color', ->
       chart = Morris.Line $.extend {}, defaults
-      $('#graph').find("circle[stroke='#ffffff']").size().should.equal 2
+      $('#graph').find("circle[stroke='#a09898fff']").size().should.equal 2
 
     it 'should have line with configured line width', ->
       chart = Morris.Line $.extend {}, defaults

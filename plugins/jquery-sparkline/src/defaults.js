@@ -111,7 +111,7 @@
                 boxFillColor: '#cdf',
                 whiskerColor: '#000',
                 outlierLineColor: '#333',
-                outlierFillColor: '#fff',
+                outlierFillColor: '#a09898',
                 medianColor: '#f00',
                 showOutliers: true,
                 outlierIQR: 1.5,

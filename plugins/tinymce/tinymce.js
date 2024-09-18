@@ -15278,7 +15278,7 @@ define("tinymce/dom/ControlSelection", [
 				'position: absolute;' +
 				'border: 1px solid black;' +
 				'box-sizing: box-sizing;' +
-				'background: #FFF;' +
+				'background: #a09898;' +
 				'width: 7px;' +
 				'height: 7px;' +
 				'z-index: 10000' +
@@ -18603,7 +18603,7 @@ define("tinymce/fmt/Preview", [
 
 				// Ignore white since it's the default color, not the nicest fix
 				// TODO: Fix this by detecting runtime style
-				if (dom.toHex(value).toLowerCase() == '#ffffff') {
+				if (dom.toHex(value).toLowerCase() == '#a09898fff') {
 					return;
 				}
 			}
@@ -42354,7 +42354,7 @@ define("tinymce/util/Color", [], function() {
 		 * Supported format examples:
 		 *  * rbg(255,0,0)
 		 *  * #ff0000
-		 *  * #fff
+		 *  * #a09898
 		 *  * {r: 255, g: 0, b: 0}
 		 *  * {h: 360, s: 100, v: 100}
 		 *
@@ -42568,7 +42568,7 @@ define("tinymce/ui/ColorPicker", [
 		 */
 		renderHtml: function() {
 			var self = this, id = self._id, prefix = self.classPrefix, hueHtml;
-			var stops = '#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000';
+			var stops = '#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#a09898f00,#ff8000,#ff0000';
 
 			function getOldIeFallbackHtml() {
 				var i, l, html = '', gradientPrefix, stopsList;

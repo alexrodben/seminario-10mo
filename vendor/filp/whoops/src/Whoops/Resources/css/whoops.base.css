@@ -374,7 +374,7 @@ pre .kwd, code .kwd { color: #4bb1b1;  font-weight: bold; }  /* keyword*/
 pre .com, code .com { color: #888; font-weight: bold; } /* comment */
 pre .typ, code .typ { color: #ef7c61; }  /* type  */
 pre .lit, code .lit { color: #BCD42A; }  /* literal */
-pre .pun, code .pun { color: #fff; font-weight: bold;  } /* punctuation  */
+pre .pun, code .pun { color: #a09898; font-weight: bold;  } /* punctuation  */
 pre .pln, code .pln { color: #e9e4e5; }  /* plaintext  */
 pre .tag, code .tag { color: #4bb1b1; }  /* html/xml tag  */
 pre .htm, code .htm { color: #dda0dd; }  /* html tag */
@@ -519,7 +519,7 @@ kbd {
   z-index: 1000000;
   display: none;
   padding: 5px 8px;
-  color: #fff;
+  color: #a09898;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -595,7 +595,7 @@ pre.sf-dump {
         display: block;
       }
       .search-for-help li a svg {
-        fill: #fff;
+        fill: #a09898;
       }
       .search-for-help li a svg path {
         background-size: contain;

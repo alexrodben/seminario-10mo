@@ -112,31 +112,31 @@
             }
             .current a {
                 background: #2184be;
-                color: #fff;
+                color: #a09898;
                 cursor: default;
                 &:hover,
                 &:active {
                     background: #2184be;
-                    color: #fff;
+                    color: #a09898;
                     cursor: default;
                 }
             }
             .done a {
                 background: #9dc8e2;
-                color: #fff;
+                color: #a09898;
                 &:hover,
                 &:active {
                     background: #9dc8e2;
-                    color: #fff;
+                    color: #a09898;
                 }
             }
             .error a {
                 background: #ff3111;
-                color: #fff;
+                color: #a09898;
                 &:hover,
                 &:active {
                     background: #ff3111;
-                    color: #fff;
+                    color: #a09898;
                 }
             }
         }
@@ -168,16 +168,16 @@
     > {
         .actions {
             a {
-                background: #009688;
-                color: #fff;
+                background: #1e92c9;
+                color: #a09898;
                 display: block;
                 padding: 0.5em 1em;
                 text-decoration: none;
                 @include border-radius(0);
                 &:hover,
                 &:active {
-                    background: #009688;
-                    color: #fff;
+                    background: #1e92c9;
+                    color: #a09898;
                     display: block;
                     padding: 0.5em 1em;
                     text-decoration: none;
@@ -223,7 +223,7 @@
                     padding: 0;
                 }
                 &.current {
-                    background: #fff;
+                    background: #a09898;
                     border: 1px solid #bbb;
                     border-bottom: 0 none;
                     padding: 0 0 1px 0;
@@ -291,11 +291,11 @@
         }
         .done {
             a {
-                background-color: rgba(#009688, 0.6);
+                background-color: rgba(#1e92c9, 0.6);
                 &:hover,
                 &:active,
                 &:focus {
-                    background-color: rgba(#009688, 0.5);
+                    background-color: rgba(#1e92c9, 0.5);
                 }
             }
         }
@@ -306,11 +306,11 @@
         }
         .current {
             a {
-                background-color: #009688;
+                background-color: #1e92c9;
                 &:active,
                 &:focus,
                 &:hover {
-                    background-color: #009688;
+                    background-color: #1e92c9;
                 }
             }
         }

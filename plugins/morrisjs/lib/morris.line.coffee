@@ -28,7 +28,7 @@ class Morris.Line extends Morris.Grid
       '#9440ed'
     ]
     pointStrokeWidths: [1]
-    pointStrokeColors: ['#ffffff']
+    pointStrokeColors: ['#a09898fff']
     pointFillColors: []
     smooth: true
     xLabels: 'auto'

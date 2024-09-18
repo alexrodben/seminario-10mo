@@ -5,7 +5,7 @@
 
             .panel-title {
                 background-color: $val !important;
-                color: #fff;
+                color: #a09898;
             }
 
             .panel-body {
@@ -59,7 +59,7 @@
 
         .panel-title {
             background-color: #2b982b;
-            color: #fff;
+            color: #a09898;
         }
     }
 
@@ -68,7 +68,7 @@
 
         .panel-title {
             background-color: #ff9600;
-            color: #fff;
+            color: #a09898;
         }
     }
 
@@ -77,7 +77,7 @@
 
         .panel-title {
             background-color: #fb483a;
-            color: #fff;
+            color: #a09898;
         }
     }
 }
@@ -86,42 +86,42 @@
     @each $key, $val in $colors {
         .panel-col-#{$key} {
             .panel-body {
-                border-top-color: #fff !important;
+                border-top-color: #a09898 !important;
                 background-color: $val;
-                color: #fff;
+                color: #a09898;
             }
         }
     }
 
     .panel-primary {
         .panel-body {
-            border-top-color: #fff !important;
+            border-top-color: #a09898 !important;
             background-color: #1f91f3;
-            color: #fff;
+            color: #a09898;
         }
     }
 
     .panel-success {
         .panel-body {
-            border-top-color: #fff !important;
+            border-top-color: #a09898 !important;
             background-color: #2b982b;
-            color: #fff;
+            color: #a09898;
         }
     }
 
     .panel-warning {
         .panel-body {
-            border-top-color: #fff !important;
+            border-top-color: #a09898 !important;
             background-color: #ff9600;
-            color: #fff;
+            color: #a09898;
         }
     }
 
     .panel-danger {
         .panel-body {
-            border-top-color: #fff !important;
+            border-top-color: #a09898 !important;
             background-color: #fb483a;
-            color: #fff;
+            color: #a09898;
         }
     }
 }

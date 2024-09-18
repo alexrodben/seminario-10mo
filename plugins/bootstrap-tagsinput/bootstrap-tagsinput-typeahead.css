@@ -20,7 +20,7 @@
     margin: 2px 0 0;
     list-style: none;
     font-size: 14px;
-    background-color: #ffffff;
+    background-color: #a09898fff;
     border: 1px solid #cccccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -42,7 +42,7 @@
 
 .tt-suggestion:hover,
 .tt-suggestion:focus {
-    color: #ffffff;
+    color: #a09898fff;
     text-decoration: none;
     outline: 0;
     background-color: #428bca;

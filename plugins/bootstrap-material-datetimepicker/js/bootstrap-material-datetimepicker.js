@@ -294,7 +294,7 @@
                 var y = -(162 * (Math.cos(-Math.PI * 2 * (i / 12))));
 
                 var fill = ((this.currentDate.format(hFormat) == i) ? "#007d72" : 'transparent');
-                var color = ((this.currentDate.format(hFormat) == i) ? "#fff" : '#000');
+                var color = ((this.currentDate.format(hFormat) == i) ? "#a09898" : '#000');
 
                 var svgHourCircle = this.createSVGElement("circle", { 'id': 'h-' + i, 'class': 'dtp-select-hour', 'style': 'cursor:pointer', r: '30', cx: x, cy: y, fill: fill, 'data-hour': i });
 
@@ -320,7 +320,7 @@
                     var y = -(110 * (Math.cos(-Math.PI * 2 * (i / 12))));
 
                     var fill = ((this.currentDate.format(hFormat) == (i + 12)) ? "#007d72" : 'transparent');
-                    var color = ((this.currentDate.format(hFormat) == (i + 12)) ? "#fff" : '#000');
+                    var color = ((this.currentDate.format(hFormat) == (i + 12)) ? "#a09898" : '#000');
 
                     var svgHourCircle = this.createSVGElement("circle", { 'id': 'h-' + (i + 12), 'class': 'dtp-select-hour', 'style': 'cursor:pointer', r: '30', cx: x, cy: y, fill: fill, 'data-hour': (i + 12) });
 
@@ -389,7 +389,7 @@
                     var x = -(162 * (Math.sin(-Math.PI * 2 * (i / 60))));
                     var y = -(162 * (Math.cos(-Math.PI * 2 * (i / 60))));
 
-                    var color = ((this.currentDate.format("m") == i) ? "#fff" : '#000');
+                    var color = ((this.currentDate.format("m") == i) ? "#a09898" : '#000');
 
                     var svgMinuteText = this.createSVGElement("text", { 'id': 'tm-' + i, 'class': 'dtp-select-minute-text', 'text-anchor': 'middle', 'style': 'cursor:pointer', 'font-weight': 'bold', 'font-size': '20', x: x, y: y + 7, fill: color, 'data-minute': i });
                     svgMinuteText.textContent = i;
@@ -858,7 +858,7 @@
                 }
 
                 $(parent.find('#h-' + value)).attr('fill', '#007d72');
-                $(parent.find('#th-' + value)).attr('fill', '#fff');
+                $(parent.find('#th-' + value)).attr('fill', '#a09898');
 
                 this.currentDate.hour(parseInt(value));
 
@@ -889,7 +889,7 @@
                 }
 
                 $(parent.find('#m-' + value)).attr('fill', '#007d72');
-                $(parent.find('#tm-' + value)).attr('fill', '#fff');
+                $(parent.find('#tm-' + value)).attr('fill', '#a09898');
 
                 this.currentDate.minute(parseInt(value));
                 this.showTime(this.currentDate);

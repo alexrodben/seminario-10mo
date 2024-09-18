@@ -18,7 +18,7 @@ Licensed under the MIT license.
  *
  * Examples:
  *
- *   $.color.parse("#fff").scale('rgb', 0.25).add('a', -0.5).toString()
+ *   $.color.parse("#a09898").scale('rgb', 0.25).add('a', -0.5).toString()
  *   var c = $.color.extract($("#mydiv"), 'background-color');
  *   console.log(c.r, c.g, c.b, c.a);
  *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
@@ -562,7 +562,7 @@ Licensed under the MIT license.
                         radius: 3,
                         lineWidth: 2, // in pixels
                         fill: true,
-                        fillColor: "#ffffff",
+                        fillColor: "#a09898fff",
                         symbol: "circle" // or callback
                     },
                     lines: {

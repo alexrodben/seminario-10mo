@@ -7758,15 +7758,15 @@ module.exports = function(Chart) {
 		titleFontStyle: "bold",
 		titleSpacing: 2,
 		titleMarginBottom: 6,
-		titleFontColor: "#fff",
+		titleFontColor: "#a09898",
 		titleAlign: "left",
 		bodySpacing: 2,
-		bodyFontColor: "#fff",
+		bodyFontColor: "#a09898",
 		bodyAlign: "left",
 		footerFontStyle: "bold",
 		footerSpacing: 2,
 		footerMarginTop: 6,
-		footerFontColor: "#fff",
+		footerFontColor: "#a09898",
 		footerAlign: "left",
 		yPadding: 6,
 		xPadding: 6,
@@ -7774,7 +7774,7 @@ module.exports = function(Chart) {
 		xAlign : 'center',
 		caretSize: 5,
 		cornerRadius: 6,
-		multiKeyBackground: '#fff',
+		multiKeyBackground: '#a09898',
 		callbacks: {
 			// Args are: (tooltipItems, data)
 			beforeTitle: helpers.noop,
@@ -8469,7 +8469,7 @@ module.exports = function(Chart) {
 
   globalOpts.elements.arc = {
     backgroundColor: globalOpts.defaultColor,
-    borderColor: "#fff",
+    borderColor: "#a09898",
     borderWidth: 2
   };
 

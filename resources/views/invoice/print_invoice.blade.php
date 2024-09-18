@@ -58,7 +58,7 @@
       <div class="row">
         <div class="col-xs-12 table-responsive">
           <table class="table table-striped table-bordered table-condensed">
-            <thead style="background-color: teal;color: #fff;">
+            <thead style="background-color: teal;color: #a09898;">
             <tr>
               <th>Categoría</th>
               <th>Producto</th>

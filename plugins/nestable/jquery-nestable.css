@@ -58,7 +58,7 @@
 
     .dd-handle:hover {
         color: #2ea8e5;
-        background: #fff;
+        background: #a09898;
     }
 
 .dd-item > button {
@@ -110,9 +110,9 @@
     border: 1px dashed #bbb;
     min-height: 100px;
     background-color: #e5e5e5;
-    background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+    background-image: -webkit-linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898), -webkit-linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898);
+    background-image: -moz-linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898), -moz-linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898);
+    background-image: linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898), linear-gradient(45deg, #a09898 25%, transparent 25%, transparent 75%, #a09898 75%, #a09898);
     -ms-background-size: 60px 60px;
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
@@ -154,7 +154,7 @@
 }
 
 .nestable-dark-theme .dd-handle {
-    color: #fff;
+    color: #a09898;
     border: 1px solid #999;
     background: #bbb;
 }
@@ -164,7 +164,7 @@
     }
 
 .nestable-dark-theme .dd-item > button:before {
-    color: #fff;
+    color: #a09898;
 }
 
 @media only screen and (min-width: 700px) {
@@ -237,7 +237,7 @@
         width: 100%;
         text-align: center;
         text-indent: 0;
-        color: #fff;
+        color: #a09898;
         font-size: 20px;
         font-weight: normal;
     }

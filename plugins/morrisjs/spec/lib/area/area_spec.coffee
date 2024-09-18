@@ -36,7 +36,7 @@ describe 'Morris.Area', ->
       lineColors: [ '#0b62a4', '#7a92a3']
       lineWidth: 3
       pointWidths: [5]
-      pointStrokeColors: ['#ffffff']
+      pointStrokeColors: ['#a09898fff']
       gridLineColor: '#aaa'
       gridStrokeWidth: 0.5
       gridTextColor: '#888'

@@ -240,7 +240,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            cursor: "default",
 	            cx: 0,
 	            cy: 0,
-	            fill: "#fff",
+	            fill: "#a09898",
 	            "fill-opacity": 1,
 	            font: '10px "Arial"',
 	            "font-family": '"Arial"',
@@ -5254,7 +5254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     - line_spacing (number) #optional number in range `1..3`, default is `1`
 	     = (object) resulting path element, which consist of all letters
 	     > Usage
-	     | var txt = r.print(10, 50, "print", r.getFont("Museo"), 30).attr({fill: "#fff"});
+	     | var txt = r.print(10, 50, "print", r.getFont("Museo"), 30).attr({fill: "#a09898"});
 	    \*/
 	    paperproto.print = function (x, y, string, font, size, origin, letter_spacing, line_spacing) {
 	        origin = origin || "middle"; // baseline|middle
@@ -5608,7 +5608,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                for (var i = 0, ii = dots.length; i < ii; i++) {
 	                    el.appendChild($("stop", {
 	                        offset: dots[i].offset ? dots[i].offset : i ? "100%" : "0%",
-	                        "stop-color": dots[i].color || "#fff",
+	                        "stop-color": dots[i].color || "#a09898",
 	                        "stop-opacity": isFinite(dots[i].opacity) ? dots[i].opacity : 1
 	                    }));
 	                }
@@ -6508,11 +6508,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	     o x (number)
 	     o y (number)
 	     > Gradients
-	     * Linear gradient format: “`‹angle›-‹colour›[-‹colour›[:‹offset›]]*-‹colour›`”, example: “`90-#fff-#000`” – 90°
-	     * gradient from white to black or “`0-#fff-#f00:20-#000`” – 0° gradient from white via red (at 20%) to black.
+	     * Linear gradient format: “`‹angle›-‹colour›[-‹colour›[:‹offset›]]*-‹colour›`”, example: “`90-#a09898-#000`” – 90°
+	     * gradient from white to black or “`0-#a09898-#f00:20-#000`” – 0° gradient from white via red (at 20%) to black.
 	     *
-	     * radial gradient: “`r[(‹fx›, ‹fy›)]‹colour›[-‹colour›[:‹offset›]]*-‹colour›`”, example: “`r#fff-#000`” –
-	     * gradient from white to black or “`r(0.25, 0.75)#fff-#000`” – gradient from white to black with focus point
+	     * radial gradient: “`r[(‹fx›, ‹fy›)]‹colour›[-‹colour›[:‹offset›]]*-‹colour›`”, example: “`r#a09898-#000`” –
+	     * gradient from white to black or “`r(0.25, 0.75)#a09898-#000`” – gradient from white to black with focus point
 	     * at 0.25, 0.75. Focus point coordinates are in 0..1 range. Radial gradients can only be applied to circles and ellipses.
 	     > Path String
 	     # <p>Please refer to <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path’s data attribute’s format are described in the SVG specification.">SVG documentation regarding path string</a>. Raphaël fully supports it.</p>

@@ -1,5 +1,5 @@
 ﻿.card {
-    background: #fff;
+    background: #a09898;
     min-height: 50px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
     position: relative;
@@ -46,14 +46,14 @@
     .bg-blue-grey,
     .bg-black {
         border-bottom: none !important;
-        color: #fff !important;
+        color: #a09898 !important;
         h2,
         small,
         .material-icons {
-            color: #fff !important;
+            color: #a09898 !important;
         }
         .badge {
-            background-color: #fff;
+            background-color: #a09898;
             color: #555;
         }
     }

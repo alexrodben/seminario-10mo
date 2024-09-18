@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 style="text-align:center">Opps Algo salió mal<br>
+    <h1 style="text-align:center">Opps, algo salió mal<br>
     <a href="{{ url('/') }}">Ir a inicio</a>
     </h1>
 </body>

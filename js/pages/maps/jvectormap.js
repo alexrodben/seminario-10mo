@@ -24,7 +24,7 @@ $(function () {
         },
         markerStyle: {
             initial: {
-                fill: '#009688',
+                fill: '#1e92c9',
                 stroke: '#000'
             }
         },

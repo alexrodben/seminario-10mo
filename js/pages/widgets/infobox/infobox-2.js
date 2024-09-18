@@ -13,8 +13,8 @@ function initCharts() {
     //Chart Bar
     $('.chart.chart-bar').sparkline(undefined, {
         type: 'bar',
-        barColor: '#fff',
-        negBarColor: '#fff',
+        barColor: '#a09898',
+        negBarColor: '#a09898',
         barWidth: '4px',
         height: '34px'
     });
@@ -31,13 +31,13 @@ function initCharts() {
         type: 'line',
         width: '60px',
         height: '45px',
-        lineColor: '#fff',
+        lineColor: '#a09898',
         lineWidth: 1.3,
         fillColor: 'rgba(0,0,0,0)',
         spotColor: 'rgba(255,255,255,0.40)',
         maxSpotColor: 'rgba(255,255,255,0.40)',
         minSpotColor: 'rgba(255,255,255,0.40)',
         spotRadius: 3,
-        highlightSpotColor: '#fff'
+        highlightSpotColor: '#a09898'
     });
 }

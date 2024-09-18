@@ -49,7 +49,7 @@ describe 'Morris.Donut', ->
 
     it 'should have a path with white stroke', ->
       chart = Morris.Donut $.extend {}, defaults
-      $('#graph').find("path[stroke='#ffffff']").size().should.equal 4
+      $('#graph').find("path[stroke='#a09898fff']").size().should.equal 4
 
     it 'should have a path with stroke-width 3', ->
       chart = Morris.Donut $.extend {}, defaults

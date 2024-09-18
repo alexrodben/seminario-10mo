@@ -117,7 +117,7 @@
 .wizard > .steps .current a:active
 {
     background: #2184be;
-    color: #fff;
+    color: #a09898;
     cursor: default;
 }
 
@@ -126,7 +126,7 @@
 .wizard > .steps .done a:active
 {
     background: #9dc8e2;
-    color: #fff;
+    color: #a09898;
 }
 
 .wizard > .steps .error a,
@@ -134,7 +134,7 @@
 .wizard > .steps .error a:active
 {
     background: #ff3111;
-    color: #fff;
+    color: #a09898;
 }
 
 .wizard > .content
@@ -254,7 +254,7 @@
 .wizard > .actions a:active
 {
     background: #2184be;
-    color: #fff;
+    color: #a09898;
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
@@ -324,7 +324,7 @@
 
 .tabcontrol > .steps > ul > li.current
 {
-    background: #fff;
+    background: #a09898;
     border: 1px solid #bbb;
     border-bottom: 0 none;
     padding: 0 0 1px 0;

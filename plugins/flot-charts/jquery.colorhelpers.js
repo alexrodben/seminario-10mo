@@ -8,7 +8,7 @@
  *
  * Examples:
  *
- *   $.color.parse("#fff").scale('rgb', 0.25).add('a', -0.5).toString()
+ *   $.color.parse("#a09898").scale('rgb', 0.25).add('a', -0.5).toString()
  *   var c = $.color.extract($("#mydiv"), 'background-color');
  *   console.log(c.r, c.g, c.b, c.a);
  *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
@@ -91,7 +91,7 @@
         return $.color.parse(c);
     }
     
-    // parse CSS color string (like "rgb(10, 32, 43)" or "#fff"),
+    // parse CSS color string (like "rgb(10, 32, 43)" or "#a09898"),
     // returns color object, if parsing failed, you get black (0, 0,
     // 0) out
     $.color.parse = function (str) {
@@ -117,7 +117,7 @@
         if (res = /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(str))
             return m(parseInt(res[1], 16), parseInt(res[2], 16), parseInt(res[3], 16));
 
-        // Look for #fff
+        // Look for #a09898
         if (res = /#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/.exec(str))
             return m(parseInt(res[1]+res[1], 16), parseInt(res[2]+res[2], 16), parseInt(res[3]+res[3], 16));
 

@@ -22,7 +22,7 @@ class Morris.Donut extends Morris.EventEmitter
       '#052C48'
       '#042135'
     ],
-    backgroundColor: '#FFFFFF', 
+    backgroundColor: '#a09898FFF', 
     labelColor: '#000000',
     formatter: Morris.commas
     resize: false

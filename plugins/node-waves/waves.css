@@ -71,7 +71,7 @@
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, #ffffff 100%, #000000 100%);
+  -webkit-mask-image: -webkit-radial-gradient(circle, #a09898fff 100%, #000000 100%);
 }
 .waves-button,
 .waves-button:hover,
