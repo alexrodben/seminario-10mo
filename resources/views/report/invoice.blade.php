@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Invoice-Report')
+@section('title','Inventario | Reporte de factura')
 
 
-@section('page-title','Invoice Report')
+@section('page-title','Reporte de factura')
 
 
 @section('content')
@@ -56,13 +56,13 @@
 
 							</tr>
 							<tr>
-								<th>Invoice No.</th>
-								<th>Invoice Date</th>
-								<th>Customer</th>
-								<th>Seller</th>
-								<th>Details</th>
-								<th>Total Importe</th>
-								<th>Paid Importe</th>
+								<th>No. de factura</th>
+								<th>Fecha de factura</th>
+								<th>Cliente</th>
+								<th>Proveedor</th>
+								<th>Detalles</th>
+								<th>Importe total</th>
+								<th>Importe pagado</th>
 								<th>Due</th>
 							</tr>
 						</thead>

@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 style="text-align:center">Opps Something Went Wrong <br>
-         Or You Don't Have Permission to Access This Page 
-    <a href="{{ url('/') }}">Go To Home page</a>
+    <h1 style="text-align:center">Opps Algo salió mal<br>
+    <a href="{{ url('/') }}">Ir a inicio</a>
     </h1>
 </body>
 </html>

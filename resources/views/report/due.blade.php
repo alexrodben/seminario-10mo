@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Due-Report')
+@section('title','Inventario | Reporte a deber')
 
 
-@section('page-title','Due Report')
+@section('page-title','Reporte a deber')
 
 
 @section('content')
@@ -57,10 +57,10 @@
 							</tr>
 							<tr>
 								
-								<th>Customer</th>
-								<th>Total Importe</th>
-								<th>Paid Importe</th>
-								<th>Due</th>
+								<th>Clima</th>
+								<th>Importe total</th>
+								<th>Importe pagado</th>
+								<th>Importe debido</th>
 							</tr>
 						</thead>
 						

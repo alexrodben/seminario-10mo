@@ -34,7 +34,7 @@
           <address>
             <strong>{{ $invoice->customer->customer_name }}</strong><br>
 
-            <span style="font-weight: bold">Telefono:</span> {{ $invoice->customer->phone }}<br>
+            <span style="font-weight: bold">Teléfono:</span> {{ $invoice->customer->phone }}<br>
             <span style="font-weight: bold">Correo electrónico:</span> {{ $invoice->customer->email ? $invoice->customer->email : 'no email' }}<br>
 
             <span style="font-weight: bold">Dirección:</span> {{ $invoice->customer->address  }}<br>

@@ -60,7 +60,7 @@
 								<th>Comprobante</th>
 								<th>Fecha de venta</th>
 								<th>Cliente</th>
-								<th>Vendedor</th>
+								<th>Proveedor</th>
 								<th>Cantidad</th>
 								<th>Precio unitario de compra</th>
 								<th>Precio unitario de venta</th>

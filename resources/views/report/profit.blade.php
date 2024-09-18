@@ -1,10 +1,10 @@
 @extends('include.master')
 
 
-@section('title','Inventory | Profit-Report')
+@section('title','Inventario | Reporte de ganancia')
 
 
-@section('page-title','Profit Report')
+@section('page-title','Reporte de ganancia')
 
 
 @section('content')
@@ -56,11 +56,11 @@
 
 							</tr>
 							<tr>
-								<th>Product</th>
-								<th>Quantity</th>
-								<th>Total Selling Importe</th>
-								<th>Total Buying Importe</th>
-								<th>Profit</th>
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<th>Importe total vendido</th>
+								<th>Importe total comprado</th>
+								<th>Beneficio neto</th>
 							
 							</tr>
 						</thead>
