@@ -73,14 +73,14 @@ class PaymentController extends Controller
 
           $sell->save();
 
-          return response()->json(['status'=>'success','message'=>'Payment Success']);
+          return response()->json(['status'=>'success','message'=>'Pago registrado correctamente']);
 
 
 
         }
         catch(\Exception $e){
           
-          return response()->json(['status'=>'error','message'=>'Something Went Wrong']);
+          return response()->json(['status'=>'error','message'=>'Algo salió mal!']);
 
         
 

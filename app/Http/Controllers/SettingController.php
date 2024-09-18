@@ -64,7 +64,7 @@ class SettingController extends Controller
         }
         else{
          
-            Session::flash('message','Old Password Does Not Match Try Again');
+            Session::flash('message','Antigua contraseña no coincide, intente de nuevo');
             return redirect()->back();
 
         }

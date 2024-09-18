@@ -189,7 +189,7 @@ class RoleController extends Controller
        }
         
 
-        return response()->json(['status'=>'success','message'=>'New Permission Given']);
+        return response()->json(['status'=>'success','message'=>'Nuevo permiso concedido']);
 
        }
        catch(\Exception $e)
@@ -261,7 +261,7 @@ class RoleController extends Controller
 
             $role->delete();
 
-            return response()->json(['status'=>'success','Delete Success!']);
+            return response()->json(['status'=>'success','Eliminado correctamente!']);
         }
         catch(\Exception $e){
 

@@ -40922,27 +40922,27 @@ var render = function() {
             },
             [
               _c("option", { domProps: { value: "" } }, [
-                _vm._v("Chose Report Type *")
+                _vm._v("Seleccione el tipo de reporte *")
               ]),
               _vm._v(" "),
               _c("option", { domProps: { value: "stock" } }, [
-                _vm._v("Stock Report")
+                _vm._v("Reporte de Stock")
               ]),
               _vm._v(" "),
               _c("option", { domProps: { value: "sell" } }, [
-                _vm._v("Sell Report")
+                _vm._v("Reporte de ventas")
               ]),
               _vm._v(" "),
               _c("option", { domProps: { value: "profit" } }, [
-                _vm._v("Profit Report")
+                _vm._v("Reporte de beneficio neto")
               ]),
               _vm._v(" "),
               _c("option", { domProps: { value: "due" } }, [
-                _vm._v("Due Report")
+                _vm._v("Reporte de importe debido")
               ]),
               _vm._v(" "),
               _c("option", { domProps: { value: "invoice" } }, [
-                _vm._v("Invoice Report")
+                _vm._v("Reporte de factura")
               ])
             ]
           )
