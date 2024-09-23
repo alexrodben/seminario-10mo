@@ -11,24 +11,27 @@
 
 namespace Symfony\Component\VarDumper\Cloner;
 
+use Symfony\Component\VarDumper\Cloner\Internal\NoDefault;
+
 /**
  * Represents the main properties of a PHP variable.
  *
  * @author Nicolas Grekas <p@tchwork.com>
  */
-class Stub implements \Serializable
+class Stub
 {
-    const TYPE_REF = 1;
-    const TYPE_STRING = 2;
-    const TYPE_ARRAY = 3;
-    const TYPE_OBJECT = 4;
-    const TYPE_RESOURCE = 5;
+    public const TYPE_REF = 1;
+    public const TYPE_STRING = 2;
+    public const TYPE_ARRAY = 3;
+    public const TYPE_OBJECT = 4;
+    public const TYPE_RESOURCE = 5;
+    public const TYPE_SCALAR = 6;
 
-    const STRING_BINARY = 1;
-    const STRING_UTF8 = 2;
+    public const STRING_BINARY = 1;
+    public const STRING_UTF8 = 2;
 
-    const ARRAY_ASSOC = 1;
-    const ARRAY_INDEXED = 2;
+    public const ARRAY_ASSOC = 1;
+    public const ARRAY_INDEXED = 2;
 
     public $type = self::TYPE_REF;
     public $class = '';
@@ -37,21 +40,36 @@ class Stub implements \Serializable
     public $handle = 0;
     public $refCount = 0;
     public $position = 0;
-    public $attr = array();
+    public $attr = [];
+
+    private static array $defaultProperties = [];
 
     /**
      * @internal
      */
-    public function serialize()
+    public function __sleep(): array
     {
-        return \serialize(array($this->class, $this->position, $this->cut, $this->type, $this->value, $this->handle, $this->refCount, $this->attr));
-    }
+        $properties = [];
 
-    /**
-     * @internal
-     */
-    public function unserialize($serialized)
-    {
-        list($this->class, $this->position, $this->cut, $this->type, $this->value, $this->handle, $this->refCount, $this->attr) = \unserialize($serialized);
+        if (!isset(self::$defaultProperties[$c = static::class])) {
+            $reflection = new \ReflectionClass($c);
+            self::$defaultProperties[$c] = [];
+
+            foreach ($reflection->getProperties() as $p) {
+                if ($p->isStatic()) {
+                    continue;
+                }
+
+                self::$defaultProperties[$c][$p->name] = $p->hasDefaultValue() ? $p->getDefaultValue() : ($p->hasType() ? NoDefault::NoDefault : null);
+            }
+        }
+
+        foreach (self::$defaultProperties[$c] as $k => $v) {
+            if (NoDefault::NoDefault === $v || $this->$k !== $v) {
+                $properties[] = $k;
+            }
+        }
+
+        return $properties;
     }
 }

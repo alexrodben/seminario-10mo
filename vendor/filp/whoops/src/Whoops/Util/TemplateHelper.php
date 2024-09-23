@@ -104,7 +104,7 @@ class TemplateHelper
     {
         $parts = explode($delimiter, $s);
         foreach ($parts as &$part) {
-            $part = '<div class="delimiter">' . $part . '</div>';
+            $part = '<span class="delimiter">' . $part . '</span>';
         }
 
         return implode($delimiter, $parts);
@@ -133,16 +133,16 @@ class TemplateHelper
             $this->htmlDumper = new HtmlDumper($this->htmlDumperOutput);
 
             $styles = [
-                'default' => 'color:#a09898FFF; line-height:normal; font:12px "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace !important; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: normal',
+                'default' => 'color:#FFFFFF; line-height:normal; font:12px "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace !important; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: normal',
                 'num' => 'color:#BCD42A',
                 'const' => 'color: #4bb1b1;',
                 'str' => 'color:#BCD42A',
                 'note' => 'color:#ef7c61',
                 'ref' => 'color:#A0A0A0',
-                'public' => 'color:#a09898FFF',
-                'protected' => 'color:#a09898FFF',
-                'private' => 'color:#a09898FFF',
-                'meta' => 'color:#a09898FFF',
+                'public' => 'color:#FFFFFF',
+                'protected' => 'color:#FFFFFF',
+                'private' => 'color:#FFFFFF',
+                'meta' => 'color:#FFFFFF',
                 'key' => 'color:#BCD42A',
                 'index' => 'color:#ef7c61',
             ];
@@ -232,7 +232,6 @@ class TemplateHelper
      * passed to the template.
      *
      * @param string $template
-     * @param array  $additionalVariables
      */
     public function render($template, array $additionalVariables = null)
     {
@@ -254,8 +253,6 @@ class TemplateHelper
     /**
      * Sets the variables to be passed to all templates rendered
      * by this template helper.
-     *
-     * @param array $variables
      */
     public function setVariables(array $variables)
     {
