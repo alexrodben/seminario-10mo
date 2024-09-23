@@ -2,158 +2,72 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Product;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Http\Requests\Category\StoreCategoryRequest;
+use App\Http\Requests\Category\UpdateCategoryRequest;
+use Str;
 
 class CategoryController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index()
-  {
-    return view('category.category');
-  }
+    public function index()
+    {
+        $categories = Category::where("user_id", auth()->id())->count();
 
-  public function CategoryList(Request $request)
-  {
-
-
-    $category = Category::orderBy('name', 'ASC');
-
-    if ($request->name != '') {
-
-      $category->where('name', 'LIKE', '%' . $request->name . '%');
+        return view('categories.index', [
+            'categories' => $categories,
+        ]);
     }
 
-    $category = $category->paginate(10);
-
-    return $category;
-  }
-
-
-
-  public function AllCategory()
-  {
-
-    $cat   = Category::all();
-
-
-    return $cat;
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-    //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-    $request->validate([
-      'name' => 'required|unique:categories'
-    ]);
-
-
-    try {
-      $category = new Category;
-
-      $category->name = $request->name;
-
-      $category->save();
-
-      return response()->json(['status' => 'success', 'message' => 'Categoría agregada']);
-    } catch (\Exception $e) {
-
-      return response()->json(['status' => 'error', 'message' => '¡Algo salió mal!']);
+    public function create()
+    {
+        return view('categories.create');
     }
-  }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  \App\Category  $category
-   * @return \Illuminate\Http\Response
-   */
-  public function show(Category $category)
-  {
-    //
-  }
+    public function store(StoreCategoryRequest $request)
+    {
+        Category::create([
+            "user_id"=>auth()->id(),
+            "name" => $request->name,
+            "slug" => Str::slug($request->name)
+        ]);
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  \App\Category  $category
-   * @return \Illuminate\Http\Response
-   */
-  public function edit(Category $category)
-  {
-    return $category;
-  }
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Category  $category
-   * @return \Illuminate\Http\Response
-   */
-  public function update(Request $request, $id)
-  {
-    $request->validate([
-      'name' => 'required|unique:categories,name,' . $id,
-    ]);
-
-
-    try {
-
-      $category = Category::find($id);
-      $category->name = $request->name;
-      $category->update();
-
-      return response()->json(['status' => 'success', 'message' => 'Categoría actualizada']);
-    } catch (\Exception $e) {
-
-      return response()->json(['status' => 'error', 'message' => '¡Algo salió mal!']);
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category has been created!');
     }
-  }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  \App\Category  $category
-   * @return \Illuminate\Http\Response
-   */
-  public function destroy($id)
-  {
-    $category = Category::find($id);
-    $check = Product::where('category_id', '=', $category->id)->count();
-
-    if ($check > 0) {
-
-      return response()->json(['status' => 'error', 'message' => 'Esta categoría no esta vacía, debe eliminar primero los productos']);
+    public function show(Category $category)
+    {
+        return view('categories.show', [
+            'category' => $category
+        ]);
     }
-    try {
 
-      $category->delete();
-
-      return response()->json(['status' => 'success', 'message' => 'Categoría eliminada']);
-    } catch (\Exception $e) {
-
-      return response()->json(['status' => 'error', 'message' => '¡Algo salió mal!']);
+    public function edit(Category $category)
+    {
+        return view('categories.edit', [
+            'category' => $category
+        ]);
     }
-  }
+
+    public function update(UpdateCategoryRequest $request, Category $category)
+    {
+        $category->update([
+            "name" => $request->name,
+            "slug" => Str::slug($request->name)
+        ]);
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'La categoría ha sido actualizada!');
+    }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'La categoría ha sido eliminada!');
+    }
 }

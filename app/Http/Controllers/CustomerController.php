@@ -2,180 +2,120 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Customer;
+use App\Http\Requests\Customer\StoreCustomerRequest;
+use App\Http\Requests\Customer\UpdateCustomerRequest;
+use Str;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
+        $customers = Customer::where('user_id', auth()->id())->count();
 
-        return view('customer.customer');
-       
+        return view('customers.index', [
+            'customers' => $customers
+        ]);
     }
 
-
-    public function CustomerList(Request $request){
-        
-        $name = $request->name;
-        $email = $request->email;
-        $phone = $request->phone;
-        $customer = Customer::withCount([
-            'sell AS total_amount' => function ($query){
-      
-              $query->select(DB::raw("COALESCE(SUM(total_amount),0)"));
-              
-            },
-            
-            'sell AS total_paid_amount' => function ($query){
-      
-              $query->select(DB::raw("COALESCE(SUM(paid_amount),0)"));
-              
-            },
-            
-            ])->orderBy('customer_name','asc');
-
-            if($name != ''){
-             
-                $customer->where('customer_name','LIKE','%'.$name.'%');
-
-            }
-
-            if($email != ''){
-                 
-                $customer->where('email','LIKE','%'.$email.'%');
-
-            }
-
-            if($phone != ''){
-               
-                $customer->where('phone','LIKE','%'.$phone.'%');
-
-            }
-            
-            $customer = $customer->paginate(10);
-
-            return $customer;
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreCustomerRequest $request)
     {
-        $request->validate([
-         
-            'customer_name' => 'required',
-            'email' => 'nullable|email|unique:customers',
-            'phone' => 'nullable|numeric|unique:customers',
+        /**
+         * Handle upload an image
+         */
+        $image = '';
+        if ($request->hasFile('photo')) {
+            $image = $request->file('photo')->store('customers', 'public');
+        }
+        Customer::create([
+            'user_id' => auth()->id(),
+            'uuid' => Str::uuid(),
+            'photo' => $image,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'shopname' => $request->shopname,
+            'type' => $request->type,
+            'account_holder' => $request->account_holder,
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'address' => $request->address,
         ]);
-       
-        try{
-            $customer = new Customer;
-
-            $customer->customer_name = $request->customer_name;
-            $customer->email = $request->email;
-            $customer->phone = $request->phone;
-            $customer->address = $request->address;
-            $customer->save();
-
-            return response()->json(['status'=>'success','message'=>'Cliente agregado']);
-        }
-        catch(\Exception $e)
-        {
-         
-            return response()->json(['status'=>'error','message'=>'¡Algo salió mal!']);
-
-        }
-    
 
 
+
+        return redirect()
+            ->route('customers.index')
+            ->with('success', 'New customer has been created!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Customer $customer)
+    public function show($uuid)
     {
-        //
-    }
+        $customer = Customer::where('uuid', $uuid)->firstOrFail();
+        $customer->loadMissing(['quotations', 'orders'])->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Customer $customer)
-    {
-        return $customer;
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,$id)
-    {
-        $request->validate([
-         
-            'customer_name' => 'required',
-            'email' => 'nullable|email|unique:customers,email,'.$request->id,
-            'phone' => 'nullable|numeric|unique:customers,email,'.$request->id,
+        return view('customers.show', [
+            'customer' => $customer
         ]);
-       
-        try{
-            $customer = Customer::find($id);
-            $customer->customer_name = $request->customer_name;
-            $customer->email = $request->email;
-            $customer->phone = $request->phone;
-            $customer->address = $request->address;
-            $customer->update();
-
-            return response()->json(['status'=>'success','message'=>'Información del cliente actualizada']);
-        }
-        catch(\Exception $e)
-        {
-         
-            return response()->json(['status'=>'error','message'=>'¡Algo salió mal!']);
-
-        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Customer $customer)
+    public function edit($uuid)
     {
-        //
+        $customer = Customer::where('uuid', $uuid)->firstOrFail();
+        return view('customers.edit', [
+            'customer' => $customer
+        ]);
+    }
+
+    public function update(UpdateCustomerRequest $request, $uuid)
+    {
+        $customer = Customer::where('uuid', $uuid)->firstOrFail();
+
+        /**
+         * Handle upload image with Storage.
+         */
+        $image = $customer->photo;
+        if ($request->hasFile('photo')) {
+            if ($customer->photo) {
+                unlink(public_path('storage/') . $customer->photo);
+            }
+            $image = $request->file('photo')->store('customers', 'public');
+        }
+
+        $customer->update([
+            'photo' => $image,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'shopname' => $request->shopname,
+            'type' => $request->type,
+            'account_holder' => $request->account_holder,
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'address' => $request->address,
+        ]);
+
+        return redirect()
+            ->route('customers.index')
+            ->with('success', 'El cliente ha sido actualizado!');
+    }
+
+    public function destroy($uuid)
+    {
+        $customer = Customer::where('uuid', $uuid)->firstOrFail();
+        if ($customer->photo) {
+            unlink(public_path('storage/') . $customer->photo);
+        }
+
+        $customer->delete();
+
+        return redirect()
+            ->back()
+            ->with('success', 'El cliente ha sido eliminado!');
     }
 }
