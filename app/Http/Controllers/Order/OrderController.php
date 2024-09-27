@@ -89,7 +89,7 @@ class OrderController extends Controller
 
         return redirect()
             ->route('orders.index')
-            ->with('success', 'Order has been created!');
+            ->with('success', 'Venta creada!');
     }
 
     public function show($uuid)
@@ -135,7 +135,7 @@ class OrderController extends Controller
 
         return redirect()
             ->route('orders.complete')
-            ->with('success', 'La venta ha sido completada!');
+            ->with('success', 'Venta completada!');
     }
 
     public function destroy($uuid)
@@ -171,6 +171,6 @@ class OrderController extends Controller
             ->route('orders.index', [
                 'orders' => $orders
             ])
-            ->with('success', 'La venta ha sido cancelada!');
+            ->with('success', 'Venta cancelada!');
     }
 }

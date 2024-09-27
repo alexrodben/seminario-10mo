@@ -1,7 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `dbb_inventory`
-
 use ddb_inventory;
-
 CREATE TABLE users (
     id CHAR(11) PRIMARY KEY,
     name VARCHAR(50),

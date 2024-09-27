@@ -7,6 +7,12 @@
         "check",
         "validate"
     ],
+    "authors": [
+        {
+            "name": "Bernhard Schussek",
+            "email": "bschussek@gmail.com"
+        }
+    ],
     "require": {
         "php": "^7.2 || ^8.0",
         "ext-ctype": "*"

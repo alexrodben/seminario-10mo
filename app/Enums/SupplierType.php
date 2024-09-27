@@ -13,9 +13,9 @@ enum SupplierType: string
     public function label(): string
     {
         return match ($this) {
-            self::DISTRIBUTOR => __('Distributor'),
-            self::WHOLESALER => __('Wholesaler'),
-            self::PRODUCER => __('Producer'),
+            self::DISTRIBUTOR => __('Distribuidor'),
+            self::WHOLESALER => __('Mayorista'),
+            self::PRODUCER => __('Productor'),
         };
     }
 }

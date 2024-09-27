@@ -59,7 +59,7 @@ class CategoryController extends Controller
 
         return redirect()
             ->route('categories.index')
-            ->with('success', 'La categoría ha sido actualizada!');
+            ->with('success', 'Categoría actualizada!');
     }
 
     public function destroy(Category $category)
@@ -68,6 +68,6 @@ class CategoryController extends Controller
 
         return redirect()
             ->route('categories.index')
-            ->with('success', 'La categoría ha sido eliminada!');
+            ->with('success', 'Categoría eliminada!');
     }
 }

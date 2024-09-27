@@ -44,7 +44,7 @@ class UnitController extends Controller
 
         return redirect()
             ->route('units.index')
-            ->with('success', 'Unit has been created!');
+            ->with('success', 'Unidad creada!');
     }
 
     public function edit(Unit $unit)
@@ -64,7 +64,7 @@ class UnitController extends Controller
 
         return redirect()
             ->route('units.index')
-            ->with('success', 'La unidad ha sido actualizada!');
+            ->with('success', 'Unidad actualizada!');
     }
 
     public function destroy(Unit $unit)
@@ -73,6 +73,6 @@ class UnitController extends Controller
 
         return redirect()
             ->route('units.index')
-            ->with('success', 'La unidad se ha eliminado!');
+            ->with('success', 'Unidad eliminada!');
     }
 }

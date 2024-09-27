@@ -48,7 +48,7 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Product has been added to cart!');
+            ->with('success', 'Producto agregado!');
     }
 
     public function updateCartItem(Request $request, $rowId)
@@ -62,7 +62,7 @@ class PosController extends Controller
         if ($validatedData['qty'] > Product::where('id', intval($validatedData['product_id']))->value('quantity')) {
             return redirect()
             ->back()
-            ->with('error', 'The requested quantity is not available in stock.');
+            ->with('error', 'La cantidad de stock solicitada no está disponible.');
         }
         
 
@@ -70,7 +70,7 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Product has been updated from cart!');
+            ->with('success', 'Producto actualizado!');
     }
 
     public function deleteCartItem(String $rowId)
@@ -79,6 +79,6 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Product has been deleted from cart!');
+            ->with('success', 'Producto eliminado!');
     }
 }
