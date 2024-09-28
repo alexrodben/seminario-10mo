@@ -358,8 +358,8 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/ignition/src',
-            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            1 => __DIR__ . '/..' . '/spatie/ignition/src',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -399,8 +399,8 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -6875,6 +6875,7 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         'Rappasoft\\LaravelLivewireTables\\Traits\\Configuration\\SortingConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Configuration/SortingConfiguration.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Configuration\\TableAttributeConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Configuration/TableAttributeConfiguration.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Configuration\\ToolsConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Configuration/ToolsConfiguration.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Core\\HasCustomAttributes' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Core/HasCustomAttributes.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\HasAllTraits' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/HasAllTraits.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Helpers\\ActionsHelpers' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Helpers/ActionsHelpers.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Helpers\\BulkActionsHelpers' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Helpers/BulkActionsHelpers.php',
@@ -6903,6 +6904,9 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         'Rappasoft\\LaravelLivewireTables\\Traits\\Mechanisms\\WithRappasoftTableStyles' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Mechanisms/WithRappasoftTableStyles.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Mechanisms\\WithRappasoftTableThirdPartyScripts' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Mechanisms/WithRappasoftTableThirdPartyScripts.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Mechanisms\\WithRappasoftTableThirdPartyStyles' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Mechanisms/WithRappasoftTableThirdPartyStyles.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Configuration\\BulkActionStylingConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Configuration/BulkActionStylingConfiguration.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\HasBulkActionsStyling' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/HasBulkActionsStyling.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Helpers\\BulkActionStylingHelpers' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Helpers/BulkActionStylingHelpers.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithActions' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithActions.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithBulkActions' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithBulkActions.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithCollapsingColumns' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithCollapsingColumns.php',
@@ -6989,6 +6993,7 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasFooter' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasFooter.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasIcon' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasIcon.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasLabel' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasLabel.php',
+        'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasLabelAttributes' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasLabelAttributes.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasLocationCallback' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasLocationCallback.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasSecondaryHeader' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasSecondaryHeader.php',
         'Rappasoft\\LaravelLivewireTables\\Views\\Traits\\Core\\HasTheme' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Views/Traits/Core/HasTheme.php',
