@@ -36,12 +36,12 @@
                                         alt="" id="image-preview">
 
                                     <div class="small font-italic text-muted mb-2">
-                                        Formato JPG o PNG no mayor a 2 MB
-                                    </div>
+                                        <!-- Formato JPG o PNG no mayor a 2 MB -->
+                                    </div> 
 
-                                    <input type="file" accept="image/*" id="image" name="product_image"
+                                    <!-- <input type="file" accept="image/*" id="image" name="product_image"
                                         class="form-control @error('product_image') is-invalid @enderror"
-                                        onchange="previewImage();">
+                                        onchange="previewImage();"> -->
 
                                     @error('product_image')
                                         <div class="invalid-feedback">
