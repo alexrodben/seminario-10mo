@@ -26,7 +26,7 @@
                                 class="form-control text-center @error('invoiceProducts.' . $index . '.product_id') is-invalid @enderror"
                         >
 
-                            <option value="" class="text-center">-- Elige productos --</option>
+                            <option value="" class="text-center">-- Elige un producto --</option>
 
                             @foreach ($allProducts as $product)
                                 <option value="{{ $product->id }}" class="text-center">

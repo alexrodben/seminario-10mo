@@ -26,7 +26,7 @@
             <div class="col-xl-12">
                 <div class="card mb-4">
                     <div class="card-header">
-                        Detalle de reporte de compras
+                        Detalle de reporte
                     </div>
                     <div class="card-body">
                         <div class="row gx-3 mb-3">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Guardar</button>
+                        <button class="btn btn-primary" type="submit">Generar</button>
                         <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
                     </div>
                 </div>

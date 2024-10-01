@@ -78,7 +78,7 @@ class PurchaseController extends Controller
         if ($request->invoiceProducts == null || $request->invoiceProducts[0]['total'] == 0) {
             return redirect()
             ->back()
-            ->with('error', 'Please add product!');
+            ->with('error', 'Por favor, agrega un producto');
         }
         $purchase = Purchase::create([
             'purchase_no' => IdGenerator::generate([
@@ -120,7 +120,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->route('purchases.index')
-            ->with('success', 'Compra creada!');
+            ->with('success', 'Compra creada');
     }
 
     public function update($uuid)
@@ -142,7 +142,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'La compra ha sido aprobada!');
+            ->with('success', 'Compra aprobada');
     }
 
     public function destroy($uuid)
@@ -152,7 +152,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->route('purchases.index')
-            ->with('success', 'La compra ha sido eliminada!');
+            ->with('success', 'Compra eliminada');
     }
 
 
@@ -195,15 +195,15 @@ class PurchaseController extends Controller
             ->get();
 
         $purchase_array [] = array(
-            'Date',
-            'No Purchase',
-            'Supplier',
-            'Product Code',
-            'Product',
-            'Quantity',
-            'Unitcost',
+            'Fecha',
+            'No. de Compra',
+            'Proveedor',
+            'Código de producto',
+            'Producto',
+            'Cantidad',
+            'Precio unitario',
             'Total',
-            'Created By'
+            'Creado por'
         );
 
         foreach($purchases as $purchase)
