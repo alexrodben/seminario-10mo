@@ -21,6 +21,12 @@ class UnitSeeder extends Seeder
                 'user_id'=>1
             ],
             [
+                'name' => 'Cajas',
+                'slug' => 'caja',
+                'short_code' => 'cj',
+                'user_id'=>1
+            ],
+            [
                 'name' => 'Pieza',
                 'slug' => 'pieza',
                 'short_code' => 'pz',
