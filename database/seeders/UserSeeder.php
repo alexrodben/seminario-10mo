@@ -16,28 +16,28 @@ class UserSeeder extends Seeder
     {
         $users = collect([
             [
-                'name' => 'Admin',
-                'email' => 'admin@admin.com',
+                'name' => 'Katherine Escolin',
+                'email' => 'escolinkate@gmail.com',
                 'email_verified_at' => now(),
-                'password' => bcrypt('password'),
+                'password' => bcrypt('Adminroot.148'),
                 'created_at' => now(),
                 'uuid' => Str::uuid(),
                 'photo' => 'admin.jpg'
             ],
             [
-                'name' => 'quest',
-                'email' => 'quest@quest.com',
+                'name' => 'Vivian Escolin',
+                'email' => 'melissaalvarez1227@gmail.com',
                 'email_verified_at' => now(),
-                'password' => bcrypt('password'),
+                'password' => bcrypt('Adminroot'),
                 'created_at' => now(),
                 'uuid' => Str::uuid(),
                 'photo' => 'admin.jpg'
             ],
             [
-                'name' => 'user',
-                'email' => 'user@user.com',
+                'name' => 'Diana Escolin',
+                'email' => 'melissagonzalez1272@gmail.com',
                 'email_verified_at' => now(),
-                'password' => bcrypt('password'),
+                'password' => bcrypt('Adminroot'),
                 'created_at' => now(),
                 'uuid' => Str::uuid(),
                 'photo' => 'admin.jpg'

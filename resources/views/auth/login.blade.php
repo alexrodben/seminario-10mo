@@ -1,6 +1,9 @@
 @extends('layouts.auth')
 
+@section('title', 'Gestión de inventario')
+
 @section('content')
+<!-- <img src="{{ asset('static/manos.jpeg') }}" alt="Login Image" class="mb-4" style="max-width: 90px;"> -->
 <div class="card card-md">
     <div class="card-body">
         <h2 class="h2 text-center mb-4">
@@ -65,13 +68,8 @@
         </form>
     </div>
 </div>
-<!-- <div class="text-center text-secondary mt-3">
-    Don't have account yet? <a href="{{ route('register') }}" tabindex="-1">
-        Sign up
-    </a> -->
 
-    <span class="form-label-description">
-        <a href="{{ route('password.request') }}">Olvidé mi contraseña</a>
-    </span>
-</div>
+<span class="form-label-description">
+    <a href="{{ route('password.request') }}">Olvidé mi contraseña</a>
+</span>
 @endsection

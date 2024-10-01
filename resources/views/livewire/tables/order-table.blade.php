@@ -71,7 +71,7 @@
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('total')" href="#" role="button">
                             {{ __('Total') }}
-                            @include('inclues._sort-icon', ['field' => 'total'])
+                            @include('inclues._sort-icon', ['field' => 'sub_total'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
@@ -104,7 +104,7 @@
                             {{ $order->payment_type }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ Number::currency($order->total, 'QTZ') }}
+                            {{ Number::currency($order->sub_total, 'QTZ') }}
                         </td>
                         <td class="align-middle text-center">
                             <x-status dot
@@ -119,7 +119,7 @@
                                 route="{{ route('order.downloadInvoice', $order->uuid) }}" />
                             @if ($order->order_status === \App\Enums\OrderStatus::PENDING)
                                 <x-button.delete class="btn-icon" route="{{ route('orders.cancel', $order) }}"
-                                    onclick="return confirm('¿Está seguro de cancelar la factura No. {{ $order->invoice_no }} ?')" />
+                                    onclick="return confirm('¿Está seguro de cancelar la orden de venta No. {{ $order->invoice_no }} ?')" />
                             @endif
                         </td>
                     </tr>

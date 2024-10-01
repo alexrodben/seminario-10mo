@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div>
                         <h3 class="card-title">
-                            {{ __('Detalles de ventas') }}
+                            {{ __('Detalle de venta') }}
                         </h3>
                     </div>
 
@@ -99,7 +99,7 @@
                                     <th scope="col" class="align-middle text-center">Códidgo de producto</th>
                                     <th scope="col" class="align-middle text-center">Cantidad</th>
                                     <th scope="col" class="align-middle text-center">Precio</th>
-                                    <th scope="col" class="align-middle text-center">Sub Total</th>
+                                    <th scope="col" class="align-middle text-center">Detalle</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -141,16 +141,16 @@
                                     <td colspan="6" class="text-end">Monto pendiente</td>
                                     <td class="text-center">{{ number_format($order->due, 2) }}</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td colspan="6" class="text-end">IVA</td>
                                     <td class="text-center">{{ number_format($order->vat, 2) }}</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td colspan="6" class="text-end">Total</td>
                                     <td class="text-center">{{ number_format($order->total, 2) }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" class="text-end">Estado</td>
+                                <td colspan="6" class="text-end">Estado</td>
                                     <td class="text-center">
                                         <x-status dot
                                             color="{{ $order->order_status === \App\Enums\OrderStatus::COMPLETE ? 'green' : ($order->order_status === \App\Enums\OrderStatus::PENDING ? 'orange' : '') }}"

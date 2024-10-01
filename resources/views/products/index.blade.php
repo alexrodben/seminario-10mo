@@ -4,7 +4,7 @@
     <div class="page-body">
         @if (!$products)
             <x-empty title="Productos no encontrados" message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
-                button_label="{{ __('Agrega tu primer producto') }}" button_route="{{ route('products.create') }}" />
+                button_label="{{ __('Agregar producto') }}" button_route="{{ route('products.create') }}" />
 
             <!-- <div style="text-center" style="padding-top:-25px">
                 <center>

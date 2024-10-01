@@ -15,7 +15,7 @@ class PurchaseForm extends Component
 
     public array $invoiceProducts = [];
 
-    #[Validate('required', message: 'Please select products')]
+    #[Validate('required', message: 'Por favor, seleccione los productos')]
     public Collection $allProducts;
 
     public function mount(): void
@@ -47,7 +47,7 @@ class PurchaseForm extends Component
         {
             if (!$invoiceProduct['is_saved'])
             {
-                $this->addError('invoiceProducts.' . $key, 'This line must be saved before creating a new one.');
+                $this->addError('invoiceProducts.' . $key, 'Esta línea debe guardarse antes de crear una nueva..');
                 return;
             }
         }
@@ -67,7 +67,7 @@ class PurchaseForm extends Component
         {
             if (! $invoiceProduct['is_saved'])
             {
-                $this->addError('invoiceProducts.' . $key, 'This line must be saved before editing another.');
+                $this->addError('invoiceProducts.' . $key, 'Esta línea debe guardarse antes de editar otra.');
                 return;
             }
         }

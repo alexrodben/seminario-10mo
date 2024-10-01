@@ -55,11 +55,11 @@
                                         <p class="inv-from-2">{{ $customer->address }}</p>
                                     </div>
                                     <div class="col-sm-6 text-end mb-50">
-                                        <h4 class="inv-title-1">Store</h4>
-                                        <p class="inv-from-1">{{ $user->store_name }}</p>
-                                        <p class="inv-from-1">{{ $user->store_phone }}</p>
-                                        <p class="inv-from-1">{{ $user->store_email }}</p>
-                                        <p class="inv-from-2">{{ $user->store_address }}</p>
+                                    <h4 class="inv-title-1">Tienda</h4>
+                                        <p class="inv-from-1">Happy Colors</p>
+                                        <p class="inv-from-1">Colonia Prados de Villahermosa</p>
+                                        <p class="inv-from-1">Zona 7, San Miguel Petapa</p>
+                                        <p class="inv-from-2">+502 3606-3908</p>
                                     </div>
                                 </div>
                             </div>

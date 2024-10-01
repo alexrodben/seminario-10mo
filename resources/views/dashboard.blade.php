@@ -17,7 +17,7 @@
                     <div class="btn-list">
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <x-icon.plus />
-                            Crear nueva orden
+                            Crear nueva venta
                         </a>
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-sm-none btn-icon"
                             aria-label="Create new report">
@@ -389,7 +389,7 @@
                                             Regenerate package-lock.json (#29730)
                                         </div>
                                     </td>
-                                    <td class="text-nowrap text-muted">25 Nov 2019</td>
+                                    <td class="text-nowrap text-muted">25 Jul 2024</td>
                                 </tr>
                                 </tbody>
                             </table>

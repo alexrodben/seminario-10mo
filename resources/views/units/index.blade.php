@@ -6,7 +6,7 @@
         <x-empty
             title="Unidades no encontradas"
             message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
-            button_label="{{ __('Agrega tu primer unidad') }}"
+            button_label="{{ __('Agregar unidad') }}"
             button_route="{{ route('units.create') }}"
         />
     @else

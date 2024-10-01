@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ config('app.name') }}</title>
+    <title>Creación de orden</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <!-- External CSS libraries -->
@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 mb-50">
                                         <div class="invoice-number">
-                                            <h4 class="inv-title-1">Comprobante de pago:</h4>
+                                            <h4 class="inv-title-1">Fecha de creación de orden:</h4>
                                             <p class="invo-addr-1">
                                                 {{ Carbon\Carbon::now()->format('M d, Y') }}
                                             </p>
@@ -48,18 +48,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6 mb-50">
-                                        <h4 class="inv-title-1">Customer</h4>
+                                        <h4 class="inv-title-1">Cliente</h4>
                                         <p class="inv-from-1">{{ $customer->name }}</p>
                                         <p class="inv-from-1">{{ $customer->phone }}</p>
                                         <p class="inv-from-1">{{ $customer->email }}</p>
                                         <p class="inv-from-2">{{ $customer->address }}</p>
                                     </div>
                                     <div class="col-sm-6 text-end mb-50">
-                                        <h4 class="inv-title-1">Store</h4>
-                                        <p class="inv-from-1">{{ $user->store_name }}</p>
-                                        <p class="inv-from-1">{{ $user->store_phone }}</p>
-                                        <p class="inv-from-1">{{ $user->store_email }}</p>
-                                        <p class="inv-from-2">{{ $user->store_address }}</p>
+                                        <h4 class="inv-title-1">Tienda</h4>
+                                        <p class="inv-from-1">Happy Colors</p>
+                                        <p class="inv-from-1">Colonia Prados de Villahermosa</p>
+                                        <p class="inv-from-1">Zona 7, San Miguel Petapa</p>
+                                        <p class="inv-from-2">+502 3606-3908</p>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                                 <th class="text-center">Producto</th>
                                                 <th class="text-center">Precio</th>
                                                 <th class="text-center">Cantidad</th>
-                                                <th class="text-center">Subtotal</th>
+                                                <th class="text-center">Detalle</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -83,22 +83,22 @@
                                                 <td class="text-center">{{ $item->subtotal }}</td>
                                             </tr>
                                             @endforeach
-                                            <tr>
+                                            <!-- <tr>
                                                 <td colspan="3" class="text-end"><strong>Subtotal</strong></td>
                                                 <td class="text-center">
                                                     <strong>{{ Cart::subtotal() }}</strong>
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                            </tr> -->
+                                            <!-- <tr>
                                                 <td colspan="3" class="text-end"><strong>Impuesto</strong></td>
                                                 <td class="text-center">
                                                     <strong>{{ Cart::tax() }}</strong>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
                                                 <td colspan="3" class="text-end"><strong>Total</strong></td>
                                                 <td class="text-center">
-                                                    <strong>{{ Cart::total() }}</strong>
+                                                    <strong>{{ Cart::subtotal() }}</strong>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -133,7 +133,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            {{ __('Pagar compra') }}
+                            {{ __('Pagar orden de venta') }}
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -146,7 +146,7 @@
                                     <div class="mb-3">
                                         <input type="hidden" name="customer_id" value="{{ $customer->id }}">
 
-                                        <x-input.index label="Customer" name="customer" value="{{ $customer->name }}" disabled/>
+                                        <x-input.index label="Cliente" name="customer" value="{{ $customer->name }}" disabled/>
                                     </div>
                                 </div>
 
@@ -160,7 +160,7 @@
                                             <option selected="" disabled="">Elige tipo de pago:</option>
                                             <option value="Efectivo">Pago en efectivo</option>
                                             <!-- <option value="Cheque">Cheque</option> -->
-                                            <option value="Adeudado">Pago adeudado</option>
+                                            <option value="Adeudado">Pago de saldo adeudado</option>
                                         </select>
 
                                         @error('payment_type')

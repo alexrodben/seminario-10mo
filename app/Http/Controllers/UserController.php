@@ -44,7 +44,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'Nuevo usuario ha sido creado!');
+            ->with('success', 'Nuevo usuario ha sido creado');
     }
 
     public function show(User $user)
@@ -95,7 +95,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'Usuario ha sido actualizado!');
+            ->with('success', 'Usuario ha sido actualizado');
     }
 
     public function updatePassword(Request $request, String $username)
@@ -113,7 +113,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'Usuario ha sido actualizado!');
+            ->with('success', 'Usuario ha sido actualizado');
     }
 
     public function destroy(User $user)
@@ -129,6 +129,6 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'Usuario ha sido eliminado!');
+            ->with('success', 'Usuario ha sido eliminado');
     }
 }

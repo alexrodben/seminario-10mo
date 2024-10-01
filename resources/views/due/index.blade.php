@@ -37,9 +37,9 @@
                             <th scope="col" class="text-center">Cliente</th>
                             <th scope="col" class="text-center">Fecha</th>
                             <th scope="col" class="text-center">Pago</th>
-                            <th scope="col" class="text-center">Pagar</th>
-                            <th scope="col" class="text-center">Due</th>
-                            <th scope="col" class="text-center">Action</th>
+                            <th scope="col" class="text-center">Pagado</th>
+                            <th scope="col" class="text-center">Adeudado</th>
+                            <th scope="col" class="text-center">Acción</th>
                         </tr>
                     </thead>
                     <tbody>

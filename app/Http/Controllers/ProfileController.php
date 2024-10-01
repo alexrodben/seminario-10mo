@@ -61,7 +61,7 @@ class ProfileController extends Controller
 
         return redirect()
             ->route('profile.edit')
-            ->with('success', 'El perfil ha sido actualizado!');
+            ->with('success', 'El perfil ha sido actualizado');
     }
 
     public function settings(Request $request)

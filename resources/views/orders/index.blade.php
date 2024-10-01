@@ -4,7 +4,7 @@
     <div class="page-body">
         @if (!$orders)
             <x-empty title="No hay ventas encontradas" message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
-                button_label="{{ __('Agrega tu primer venta') }}" button_route="{{ route('orders.create') }}" />
+                button_label="{{ __('Agregar primer venta') }}" button_route="{{ route('orders.create') }}" />
         @else
             <div class="container-xl">
                 {{--        <x-card> --}}

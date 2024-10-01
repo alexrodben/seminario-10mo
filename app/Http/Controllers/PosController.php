@@ -48,7 +48,7 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Producto agregado!');
+            ->with('success', 'Producto agregado');
     }
 
     public function updateCartItem(Request $request, $rowId)
@@ -70,7 +70,7 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Producto actualizado!');
+            ->with('success', 'Producto actualizado');
     }
 
     public function deleteCartItem(String $rowId)
@@ -79,6 +79,6 @@ class PosController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Producto eliminado!');
+            ->with('success', 'Producto eliminado');
     }
 }

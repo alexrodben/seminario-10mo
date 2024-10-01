@@ -1,4 +1,4 @@
-use ddb_inventory;
+use dab_inventory;
 CREATE TABLE users (
     id CHAR(11) PRIMARY KEY,
     name VARCHAR(50),
@@ -89,8 +89,6 @@ CREATE TABLE orders (
     order_date VARCHAR(10),
     order_status VARCHAR(10),
     total_products INT,
-    sub_total INT,
-    vat INT,
     total INT,
     invoice_no CHAR(10),
     payment_type VARCHAR(10),

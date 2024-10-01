@@ -4,13 +4,12 @@
 cd inventory-sys
 ```
 
-1. Install Packages 
-
+1. 
 ```bash
 composer install
 ```
 
-2. Copy `.env` file 
+2. hacer copia `.env` 
 
 ```bash
 
@@ -18,27 +17,27 @@ cp .env.example .env
 
 ```
 
-3. Generate app key 
+3. Generar app key 
 
 ```bash
 php artisan key:generate
 ```
 
-4. Setting up your database credentials in your `.env` file.
-5. Seed Database: 
+4. Cambiar datos en el `.env`.
+5. Migraciones y seed Db: 
 
 ```bash
 
 php artisan migrate:fresh --seed
 
 ```
-6. Create Storage Link
+6. Link al storage
 
 ```bash
 php artisan storage:link
 ```
 
-7. Install NPM dependencies 
+7. NPM dependencias
 
 ```bash
 
