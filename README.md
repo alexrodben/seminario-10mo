@@ -1,7 +1,7 @@
 ## Sistema de gestión de inventarios y compras
 
 ```bash
-cd inventory-sys
+cd inventory_sys
 ```
 
 1. 
