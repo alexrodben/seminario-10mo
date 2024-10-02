@@ -358,8 +358,8 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
-            1 => __DIR__ . '/..' . '/spatie/ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -399,8 +399,8 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -4058,7 +4058,6 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\CpCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/CpCommand.php',
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\DeleteCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/DeleteCommand.php',
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\FileManipulationCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/FileManipulationCommand.php',
-        'Livewire\\Features\\SupportConsoleCommands\\Commands\\FluxInstallCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/FluxInstallCommand.php',
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\FormCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/FormCommand.php',
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\LayoutCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/LayoutCommand.php',
         'Livewire\\Features\\SupportConsoleCommands\\Commands\\MakeCommand' => __DIR__ . '/..' . '/livewire/livewire/src/Features/SupportConsoleCommands/Commands/MakeCommand.php',
@@ -6905,8 +6904,11 @@ class ComposerStaticInit2afde9420286195589f6638d25f722a6
         'Rappasoft\\LaravelLivewireTables\\Traits\\Mechanisms\\WithRappasoftTableThirdPartyScripts' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Mechanisms/WithRappasoftTableThirdPartyScripts.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Mechanisms\\WithRappasoftTableThirdPartyStyles' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Mechanisms/WithRappasoftTableThirdPartyStyles.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Configuration\\BulkActionStylingConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Configuration/BulkActionStylingConfiguration.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Configuration\\ToolsStylingConfiguration' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Configuration/ToolsStylingConfiguration.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\HasBulkActionsStyling' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/HasBulkActionsStyling.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\HasToolsStyling' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/HasToolsStyling.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Helpers\\BulkActionStylingHelpers' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Helpers/BulkActionStylingHelpers.php',
+        'Rappasoft\\LaravelLivewireTables\\Traits\\Styling\\Helpers\\ToolsStylingHelpers' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/Styling/Helpers/ToolsStylingHelpers.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithActions' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithActions.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithBulkActions' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithBulkActions.php',
         'Rappasoft\\LaravelLivewireTables\\Traits\\WithCollapsingColumns' => __DIR__ . '/..' . '/rappasoft/laravel-livewire-tables/src/Traits/WithCollapsingColumns.php',
