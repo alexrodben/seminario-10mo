@@ -17,6 +17,11 @@
     <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet" />
 
     <style>
+
+        .navbar-nav .nav-link:hover {
+            background-color: #0090cd; 
+        } 
+
         @import url('https://rsms.me/inter/inter.css');
 
         :root {
