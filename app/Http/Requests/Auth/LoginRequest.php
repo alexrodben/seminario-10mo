@@ -11,8 +11,6 @@ use Illuminate\Validation\ValidationException;
 
 class LoginRequest extends FormRequest
 {
-    //protected $inputType;
-
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -42,16 +40,17 @@ class LoginRequest extends FormRequest
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
-
+    
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
-
-//            throw ValidationException::withMessages([
-//                $this->email  => trans('auth.failed'),
-//            ]);
+    
+            // Lanza el error si las credenciales no coinciden
+            throw ValidationException::withMessages([
+                'email' => 'Las credenciales no coinciden con nuestros registros.',
+            ]);
         }
-
-        //RateLimiter::clear($this->throttleKey());
+    
+        RateLimiter::clear($this->throttleKey());
     }
 
     /**
@@ -70,7 +69,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'username' => trans('auth.throttle', [
+            'email' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -82,14 +81,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->input('username')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->input('email')).'|'.$this->ip());
     }
-
-//    protected function prepareForValidation()
-//    {
-//        $this->inputType = filter_var($this->input('input_type'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-//        $this->merge([
-//            $this->inputType => $this->input('input_type')
-//        ]);
-//    }
 }

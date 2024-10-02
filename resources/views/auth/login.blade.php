@@ -3,12 +3,69 @@
 @section('title', 'Gestión de inventario')
 
 @section('content')
-<!-- <img src="{{ asset('static/manos.jpeg') }}" alt="Login Image" class="mb-4" style="max-width: 90px;"> -->
+<style>
+body {
+    background-color: #0090cd; /* Color de fondo para toda la página */
+}
+    .card-md {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        max-width: 400px; /* Ajustar el ancho de la tarjeta */
+        padding: 20px;
+    }
+    .card-body {
+        background-color: #f1f3f5;
+        border-radius: 10px;
+        padding: 30px;
+    }
+    h2 {
+        color: #343a40;
+    }
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+    }
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    .form-label-description {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .form-label-description a {
+    color: #f9f9f9;
+    text-decoration: none;
+}
+.form-label-description a:hover {
+    text-decoration: underline;
+}
+.alert-danger {
+    color: #ff0000;
+    background-color: #ffcccc;
+    border-color: #ff0000;
+    text-align: center;
+}
+</style>
+
 <div class="card card-md">
     <div class="card-body">
         <h2 class="h2 text-center mb-4">
             Inventario | Login
         </h2>
+
+
         <form action="{{ route('login') }}" method="POST" autocomplete="off">
             @csrf
             <div class="mb-3">
@@ -18,17 +75,11 @@
                 <input type="email"
                        name="email"
                        id="email"
-                       class="form-control @error('email') is-invalid @enderror"
+                       class="form-control"
                        placeholder="your@email.com"
                        autocomplete="off"
                        value="{{ old('email') }}"
                 >
-
-                @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
             </div>
 
             <div class="mb-2">
@@ -40,16 +91,10 @@
                     <input type="password"
                            name="password"
                            id="password"
-                           class="form-control @error('password') is-invalid @enderror"
+                           class="form-control"
                            placeholder="Your password"
                            autocomplete="off"
                     >
-
-                    @error('password')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
                 </div>
             </div>
 
