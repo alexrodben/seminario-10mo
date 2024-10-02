@@ -89,7 +89,7 @@ class OrderController extends Controller
 
         return redirect()
             ->route('orders.index')
-            ->with('success', 'Venta creada!');
+            ->with('success', 'Venta creada');
     }
 
     public function show($uuid)

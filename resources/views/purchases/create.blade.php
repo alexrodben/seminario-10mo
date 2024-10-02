@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="card-footer text-end">
-                                {{--- onclick="return confirm('Estás seguro de comprar?')" ---}}
+                                {{--- onclick="return confirm('¿Estás de comprar?')" ---}}
                                 {{--- @disabled($errors->isNotEmpty()) ---}}
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Agregar') }}

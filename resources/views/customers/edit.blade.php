@@ -34,10 +34,10 @@
                                         src="{{ $customer->photo ? asset('storage/' . $customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}"
                                         alt="" id="image-preview" />
 
-                                    <div class="small font-italic text-muted mb-2">Formato JPG o PNG no mayor a 2 MB</div>
+                                    <!-- <div class="small font-italic text-muted mb-2">Formato JPG o PNG no mayor a 2 MB</div>
 
                                     <input class="form-control @error('photo') is-invalid @enderror" type="file"
-                                        id="image" name="photo" accept="image/*" onchange="previewImage();">
+                                        id="image" name="photo" accept="image/*" onchange="previewImage();"> -->
 
                                     @error('photo')
                                         <div class="invalid-feedback">

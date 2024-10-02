@@ -83,7 +83,7 @@
                         @method('put')
                         <input type="hidden" name="id" value="{{ $purchase->id }}">
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-success" onclick="return confirm('¿Estás seguro de que quieres aprobar esta compra?')">Aprobar compra</button>
+                        <button type="submit" class="btn btn-success" onclick="return confirm('¿¿Estás de que quieres aprobar esta compra?')">Aprobar compra</button>
                         <a class="btn btn-primary" href="{{ URL::previous() }}">Atrás</a>
                     </form>
                     @else

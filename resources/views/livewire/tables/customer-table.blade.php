@@ -90,7 +90,7 @@
                         <x-button.delete 
                             class="btn-icon" 
                             route="{{ route('customers.destroy', $customer->uuid) }}" 
-                            onclick="return confirm('Estás seguro de eliminar cliente {{ $customer->name }}?')"
+                            onclick="return confirm('¿Estás de eliminar cliente {{ $customer->name }}?')"
                         />
                     </td>
                 </tr>
