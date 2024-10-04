@@ -57,7 +57,7 @@
 
                                     <div class="row row-cards">
                                         <div class="col-md-12">
-                                            <x-input name="Nombre" :value="old('name', $customer->name)" :required="true" />
+                                            <x-input label="Nombre" name="name" :value="old('name', $customer->name)" :required="true" />
 
                                             <x-input label="Correo electrónico" name="email" :value="old('email', $customer->email)"
                                                 :required="true" />
