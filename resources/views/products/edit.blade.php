@@ -37,11 +37,11 @@
 
                                     <div class="small font-italic text-muted mb-2">
                                         <!-- Formato JPG o PNG no mayor a 2 MB -->
-                                    </div> 
+                                    </div>
 
                                     <!-- <input type="file" accept="image/*" id="image" name="product_image"
-                                        class="form-control @error('product_image') is-invalid @enderror"
-                                        onchange="previewImage();"> -->
+                                            class="form-control @error('product_image') is-invalid @enderror"
+                                            onchange="previewImage();"> -->
 
                                     @error('product_image')
                                         <div class="invalid-feedback">
@@ -70,7 +70,8 @@
 
                                                 <input type="text" id="name" name="name"
                                                     class="form-control @error('name') is-invalid @enderror"
-                                                    placeholder="Nombre de producto" value="{{ old('name', $product->name) }}">
+                                                    placeholder="Nombre de producto"
+                                                    value="{{ old('name', $product->name) }}">
 
                                                 @error('name')
                                                     <div class="invalid-feedback">
@@ -136,120 +137,20 @@
 
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
-                                                <label class="form-label" for="buying_price">
-                                                    Precio de compra
-                                                    <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input type="text" id="buying_price" name="buying_price"
-                                                    class="form-control @error('buying_price') is-invalid @enderror"
-                                                    placeholder="0"
-                                                    value="{{ old('buying_price', $product->buying_price) }}">
-
-                                                @error('buying_price')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="mb-3">
-                                                <label for="selling_price" class="form-label">
-                                                    Precio de venta
-                                                    <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input type="text" id="selling_price" name="selling_price"
-                                                    class="form-control @error('selling_price') is-invalid @enderror"
-                                                    placeholder="0"
-                                                    value="{{ old('selling_price', $product->selling_price) }}">
-
-                                                @error('selling_price')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="mb-3">
                                                 <label for="quantity" class="form-label">
                                                     {{ __(' de stock') }}
                                                 </label>
 
-                                                <input class="form-control" name="quantity" type="text" readonly value="{{ old('quantity', $product->quantity) }}"  required="true" aria-required="true" style="color: var(--tblr-secondary);background-color: var(--tblr-bg-surface-secondary); opacity: 1;"/>
+                                                <input class="form-control" name="quantity" type="text" readonly
+                                                    value="{{ old('quantity', $product->quantity) }}" required="true"
+                                                    aria-required="true"
+                                                    style="color: var(--tblr-secondary);background-color: var(--tblr-bg-surface-secondary); opacity: 1;" />
 
 
                                                 {{-- <input type="text" id="quantity" name="quantity"
                                                     class="form-control"
                                                     min="0" value="{{ old('quantity', $product->quantity) }}"
                                                     placeholder="0" disabled > --}}
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="mb-3">
-                                                <label for="quantity_alert" class="form-label">
-                                                    {{ __('Alerta de cantidad de stock') }}
-                                                    <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input type="number" id="quantity_alert" name="quantity_alert"
-                                                    class="form-control @error('quantity_alert') is-invalid @enderror"
-                                                    min="0" placeholder="0"
-                                                    value="{{ old('quantity_alert', $product->quantity_alert) }}">
-
-                                                @error('quantity_alert')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="mb-3">
-                                                <label for="tax" class="form-label">
-                                                    {{ __('Impuesto') }}
-                                                </label>
-
-                                                <input type="number" id="tax" name="tax"
-                                                    class="form-control @error('tax') is-invalid @enderror"
-                                                    min="0" placeholder="0"
-                                                    value="{{ old('tax', $product->tax) }}">
-
-                                                @error('tax')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="tax_type">
-                                                    {{ __('Tipo de impuesto') }}
-                                                </label>
-
-                                                <select name="tax_type" id="tax_type"
-                                                    class="form-select @error('tax_type') is-invalid @enderror">
-                                                    @foreach (\App\Enums\TaxType::cases() as $taxType)
-                                                        <option value="{{ $taxType->value }}"
-                                                            @selected(old('tax_type', $product->tax_type) == $taxType->value)>
-                                                            {{ $taxType->label() }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-
-                                                @error('tax_type')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
                                             </div>
                                         </div>
 

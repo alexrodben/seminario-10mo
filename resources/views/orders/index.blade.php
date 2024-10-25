@@ -3,14 +3,15 @@
 @section('content')
     <div class="page-body">
         @if (!$orders)
-            <x-empty title="No hay ventas encontradas" message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
-                button_label="{{ __('Agregar primer venta') }}" button_route="{{ route('orders.create') }}" />
+            <x-empty title="No hay entradas encontradas"
+                message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
+                button_label="{{ __('Agregar primer salida') }}" button_route="{{ route('orders.create') }}" />
         @else
             <div class="container-xl">
                 {{--        <x-card> --}}
                 {{--            <x-slot:header> --}}
                 {{--                <x-slot:title> --}}
-                {{--                    {{ __('Ventas') }} --}}
+                {{--                    {{ __('Salidas') }} --}}
                 {{--                </x-slot:title> --}}
 
                 {{--                <x-slot:actions> --}}

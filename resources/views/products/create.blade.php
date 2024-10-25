@@ -67,7 +67,7 @@
                                                  value="{{ old('name') }}"
                                         />
                                     </div>
-                            
+
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label for="category_id" class="form-label">
@@ -152,76 +152,12 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Precio de compra"
-                                                 name="buying_price"
-                                                 id="buying_price"
-                                                 placeholder="0"
-                                                 value="{{ old('buying_price') }}"
-                                        />
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
-                                                 label="Precio de venta"
-                                                 name="selling_price"
-                                                 id="selling_price"
-                                                 placeholder="0"
-                                                 value="{{ old('selling_price') }}"
-                                        />
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
                                                  label="Cantidad"
                                                  name="quantity"
                                                  id="quantity"
                                                  placeholder="0"
                                                  value="{{ old('quantity') }}"
                                         />
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
-                                                 label="Alerta de cantidad de stock"
-                                                 name="quantity_alert"
-                                                 id="quantity_alert"
-                                                 placeholder="0"
-                                                 value="{{ old('quantity_alert') }}"
-                                        />
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
-                                                 label="Impuesto"
-                                                 name="tax"
-                                                 id="tax"
-                                                 placeholder="0"
-                                                 value="{{ old('tax') }}"
-                                        />
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tax_type">
-                                                {{ __('Tipo de impuesto') }}
-                                            </label>
-
-                                            <select name="tax_type" id="tax_type"
-                                                    class="form-select @error('tax_type') is-invalid @enderror"
-                                            >
-                                                @foreach(\App\Enums\TaxType::cases() as $taxType)
-                                                <option value="{{ $taxType->value }}" @selected(old('tax_type') == $taxType->value)>
-                                                    {{ $taxType->label() }}
-                                                </option>
-                                                @endforeach
-                                            </select>
-
-                                            @error('tax_type')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                        </div>
                                     </div>
 
                                     <div class="col-md-12">

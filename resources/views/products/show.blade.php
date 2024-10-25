@@ -33,37 +33,37 @@
                         </div>
                     </div>
                     <!---
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    Product Code
-                                </div>
-                                <div class="row row-cards">
-                                    <div class="col-md-6">
-                                        <label class="small mb-1">
-                                            Product code
-                                        </label>
-
-                                        <div class="form-control">
-                                            {{ $product->code }}
-                                        </div>
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        Product Code
                                     </div>
+                                    <div class="row row-cards">
+                                        <div class="col-md-6">
+                                            <label class="small mb-1">
+                                                Product code
+                                            </label>
 
-                                    <div class="col-md-6 align-middle">
-                                        <label class="small mb-1">
-                                            Barcode
-                                        </label>
+                                            <div class="form-control">
+                                                {{ $product->code }}
+                                            </div>
+                                        </div>
 
-                                        <div class="mt-1">
-                                            {!! $barcode !!}
+                                        <div class="col-md-6 align-middle">
+                                            <label class="small mb-1">
+                                                Barcode
+                                            </label>
+
+                                            <div class="mt-1">
+                                                {!! $barcode !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    --->
+                        --->
 
                     <div class="col-lg-8">
                         <div class="card">
@@ -121,27 +121,6 @@
                                                     {{ $product->quantity_alert }}
                                                 </span>
                                             </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Precio de compra</td>
-                                            <td>{{ $product->buying_price }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Precio de venta</td>
-                                            <td>{{ $product->selling_price }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Impuesto</td>
-                                            <td>
-                                                <span class="badge bg-red-lt">
-                                                    {{ $product->tax }} %
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tipo de impuesto</td>
-                                            <td>{{ $product->tax_type->label() }}</td>
                                         </tr>
                                         <tr>
                                             <td>{{ __('Notas') }}</td>

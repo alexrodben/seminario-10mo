@@ -11,7 +11,7 @@ use App\Models\Unit;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Picqer\Barcode\BarcodeGeneratorHTML;
-use Str;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -61,17 +61,12 @@ class ProductController extends Controller
                 'prefix' => 'PC'
             ]),
 
-            'product_image'     => $image,
-            'name'              => $request->name,
-            'category_id'       => $request->category_id,
-            'unit_id'           => $request->unit_id,
-            'quantity'          => $request->quantity,
-            'buying_price'      => $request->buying_price,
-            'selling_price'     => $request->selling_price,
-            'quantity_alert'    => $request->quantity_alert,
-            'tax'               => $request->tax,
-            'tax_type'          => $request->tax_type,
-            'notes'             => $request->notes,
+            'product_image' => $image,
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'unit_id' => $request->unit_id,
+            'quantity' => $request->quantity,
+            'notes' => $request->notes,
             "user_id" => auth()->id(),
             "slug" => Str::slug($request->name, '-'),
             "uuid" => Str::uuid()
@@ -125,11 +120,6 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->unit_id = $request->unit_id;
         $product->quantity = $request->quantity;
-        $product->buying_price = $request->buying_price;
-        $product->selling_price = $request->selling_price;
-        $product->quantity_alert = $request->quantity_alert;
-        $product->tax = $request->tax;
-        $product->tax_type = $request->tax_type;
         $product->notes = $request->notes;
         $product->product_image = $image;
         $product->save();

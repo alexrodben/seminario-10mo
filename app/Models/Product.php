@@ -19,11 +19,6 @@ class Product extends Model
         'slug',
         'code',
         'quantity',
-        'quantity_alert',
-        'buying_price',
-        'selling_price',
-        'tax',
-        'tax_type',
         'notes',
         'product_image',
         'category_id',
@@ -55,28 +50,12 @@ class Product extends Model
         return $this->belongsTo(Unit::class);
     }
 
-    protected function buyingPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value / 100,
-            set: fn ($value) => $value * 100,
-        );
-    }
-
-    protected function sellingPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value / 100,
-            set: fn ($value) => $value * 100,
-        );
-    }
-
     public function scopeSearch($query, $value): void
     {
         $query->where('name', 'like', "%{$value}%")
             ->orWhere('code', 'like', "%{$value}%");
     }
-     /**
+    /**
      * Get the user that owns the Category
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

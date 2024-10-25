@@ -20,17 +20,15 @@ class PurchaseForm extends Component
 
     public function mount(): void
     {
-        $this->allProducts = Product::where("user_id",auth()->id())->get();
+        $this->allProducts = Product::where("user_id", auth()->id())->get();
     }
 
     public function render(): View
     {
         $total = 0;
 
-        foreach ($this->invoiceProducts as $invoiceProduct)
-        {
-            if ($invoiceProduct['is_saved'] && $invoiceProduct['product_price'] && $invoiceProduct['quantity'])
-            {
+        foreach ($this->invoiceProducts as $invoiceProduct) {
+            if ($invoiceProduct['is_saved'] && $invoiceProduct['product_price'] && $invoiceProduct['quantity']) {
                 $total += $invoiceProduct['product_price'] * $invoiceProduct['quantity'];
             }
         }
@@ -43,10 +41,8 @@ class PurchaseForm extends Component
 
     public function addProduct(): void
     {
-        foreach ($this->invoiceProducts as $key => $invoiceProduct)
-        {
-            if (!$invoiceProduct['is_saved'])
-            {
+        foreach ($this->invoiceProducts as $key => $invoiceProduct) {
+            if (!$invoiceProduct['is_saved']) {
                 $this->addError('invoiceProducts.' . $key, 'Esta línea debe guardarse antes de crear una nueva..');
                 return;
             }
@@ -63,10 +59,8 @@ class PurchaseForm extends Component
 
     public function editProduct($index): void
     {
-        foreach ($this->invoiceProducts as $key => $invoiceProduct)
-        {
-            if (! $invoiceProduct['is_saved'])
-            {
+        foreach ($this->invoiceProducts as $key => $invoiceProduct) {
+            if (!$invoiceProduct['is_saved']) {
                 $this->addError('invoiceProducts.' . $key, 'Esta línea debe guardarse antes de editar otra.');
                 return;
             }
@@ -82,7 +76,6 @@ class PurchaseForm extends Component
         $product = $this->allProducts->find($this->invoiceProducts[$index]['product_id']);
 
         $this->invoiceProducts[$index]['product_name'] = $product->name;
-        $this->invoiceProducts[$index]['product_price'] = $product->buying_price;
         $this->invoiceProducts[$index]['is_saved'] = true;
     }
 

@@ -97,14 +97,20 @@
             </thead>
             <tbody>
                 @forelse ($products as $product)
+                    @php
+                        // Ruta completa de la imagen del producto en almacenamiento
+                        $imagePath = 'public/' . $product->product_image;
+                        // Verifica si la imagen existe en el almacenamiento, sino usa una imagen por defecto
+                        $photoUrl = Storage::exists($imagePath)
+                            ? asset('storage/' . $product->product_image)
+                            : asset('assets/img/products/default.webp');
+                    @endphp
                     <tr>
                         <td class="align-middle text-center">
                             {{ $loop->iteration }}
                         </td>
                         <td class="align-middle text-center">
-                            <img style="width: 90px;"
-                                src="{{ $product->product_image ? asset('storage/' . $product->product_image) : asset('assets/img/products/default.webp') }}"
-                                alt="">
+                            <img style="width: 90px;" src="{{ $photoUrl }}" alt="{{ $product->product_image }}">
                         </td>
                         <td class="align-middle text-center">
                             {{ $product->name }}
@@ -138,7 +144,8 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Mostrando <span>{{ $products->firstItem() }}</span> de <span>{{ $products->lastItem() }}</span> de <span>{{ $products->total() }}</span> registros
+            Mostrando <span>{{ $products->firstItem() }}</span> de <span>{{ $products->lastItem() }}</span> de
+            <span>{{ $products->total() }}</span> registros
         </p>
 
         <ul class="pagination m-0 ms-auto">

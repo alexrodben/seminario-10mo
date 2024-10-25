@@ -17,7 +17,7 @@
                     <div class="btn-list">
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <x-icon.plus />
-                            Crear nueva venta
+                            Crear nueva salida
                         </a>
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-sm-none btn-icon"
                             aria-label="Create new report">
@@ -36,7 +36,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="subheader">Ventas</div>
+                                <div class="subheader">Salidas</div>
                                 <div class="ms-auto lh-1">
                                     <div class="dropdown">
                                         <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Últimos 7 días</a>
@@ -215,7 +215,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $orders }} Ventas
+                                                {{ $orders }} Salidas
                                             </div>
                                             <div class="text-muted">
                                                 {{ $todayOrders }} Enviado
@@ -247,7 +247,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $purchases }} Compras
+                                                {{ $purchases }} Entradas
                                             </div>
                                             <div class="text-muted">
                                                 {{ $todayPurchases }} Hoy
@@ -257,8 +257,8 @@
                                 </div>
                             </div>
                         </div>
-                       
-                {{-- -
+
+                        {{-- -
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
@@ -315,7 +315,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                                     <div class="col">
                                         <div>Today's Earning: $4,262.40</div>
                                         <div class="text-muted"><!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
@@ -397,231 +397,231 @@
                     </div>
                 </div>
                 - --}}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-@endsection
+        @endsection
 
-@push('page-libraries')
-    <script src="{{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}" defer></script>
-    <script src="{{ asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js') }}" defer></script>
-    <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world.js') }}" defer></script>
-    <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world-merc.js') }}" defer></script>
-@endpush
+        @push('page-libraries')
+            <script src="{{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}" defer></script>
+            <script src="{{ asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js') }}" defer></script>
+            <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world.js') }}" defer></script>
+            <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world-merc.js') }}" defer></script>
+        @endpush
 
-@pushonce('page-scripts')
-    <script>
-        // @formatter:off
-        document.addEventListener("DOMContentLoaded", function() {
-            window.ApexCharts && (new ApexCharts(document.getElementById('chart-revenue-bg'), {
-                chart: {
-                    type: "area",
-                    fontFamily: 'inherit',
-                    height: 40.0,
-                    sparkline: {
-                        enabled: true
-                    },
-                    animations: {
-                        enabled: false
-                    },
-                },
-                dataLabels: {
-                    enabled: false,
-                },
-                fill: {
-                    opacity: .16,
-                    type: 'solid'
-                },
-                stroke: {
-                    width: 2,
-                    lineCap: "round",
-                    curve: "smooth",
-                },
-                series: [{
-                    name: "Profits",
-                    data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
-                        53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67
-                    ]
-                }],
-                tooltip: {
-                    theme: 'dark'
-                },
-                grid: {
-                    strokeDashArray: 4,
-                },
-                xaxis: {
-                    labels: {
-                        padding: 0,
-                    },
-                    tooltip: {
-                        enabled: false
-                    },
-                    axisBorder: {
-                        show: false,
-                    },
-                    type: 'datetime',
-                },
-                yaxis: {
-                    labels: {
-                        padding: 4
-                    },
-                },
-                labels: [
-                    '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
-                    '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
-                    '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
-                    '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
-                    '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
-                    '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
-                ],
-                colors: [tabler.getColor("primary")],
-                legend: {
-                    show: false,
-                },
-            })).render();
-        });
-        // @formatter:on
-    </script>
-    <script>
-        // @formatter:off
-        document.addEventListener("DOMContentLoaded", function() {
-            window.ApexCharts && (new ApexCharts(document.getElementById('chart-new-clients'), {
-                chart: {
-                    type: "line",
-                    fontFamily: 'inherit',
-                    height: 40.0,
-                    sparkline: {
-                        enabled: true
-                    },
-                    animations: {
-                        enabled: false
-                    },
-                },
-                fill: {
-                    opacity: 1,
-                },
-                stroke: {
-                    width: [2, 1],
-                    dashArray: [0, 3],
-                    lineCap: "round",
-                    curve: "smooth",
-                },
-                series: [{
-                    name: "May",
-                    data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
-                        53, 61, 27, 54, 43, 4, 46, 39, 62, 51, 35, 41, 67
-                    ]
-                }, {
-                    name: "April",
-                    data: [93, 54, 51, 24, 35, 35, 31, 67, 19, 43, 28, 36, 62, 61, 27, 39, 35,
-                        41, 27, 35, 51, 46, 62, 37, 44, 53, 41, 65, 39, 37
-                    ]
-                }],
-                tooltip: {
-                    theme: 'dark'
-                },
-                grid: {
-                    strokeDashArray: 4,
-                },
-                xaxis: {
-                    labels: {
-                        padding: 0,
-                    },
-                    tooltip: {
-                        enabled: false
-                    },
-                    type: 'datetime',
-                },
-                yaxis: {
-                    labels: {
-                        padding: 4
-                    },
-                },
-                labels: [
-                    '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
-                    '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
-                    '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
-                    '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
-                    '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
-                    '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
-                ],
-                colors: [tabler.getColor("primary"), tabler.getColor("gray-600")],
-                legend: {
-                    show: false,
-                },
-            })).render();
-        });
-        // @formatter:on
-    </script>
-    <script>
-        // @formatter:off
-        document.addEventListener("DOMContentLoaded", function() {
-            window.ApexCharts && (new ApexCharts(document.getElementById('chart-active-users'), {
-                chart: {
-                    type: "bar",
-                    fontFamily: 'inherit',
-                    height: 40.0,
-                    sparkline: {
-                        enabled: true
-                    },
-                    animations: {
-                        enabled: false
-                    },
-                },
-                plotOptions: {
-                    bar: {
-                        columnWidth: '50%',
-                    }
-                },
-                dataLabels: {
-                    enabled: false,
-                },
-                fill: {
-                    opacity: 1,
-                },
-                series: [{
-                    name: "Profits",
-                    data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
-                        53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67
-                    ]
-                }],
-                tooltip: {
-                    theme: 'dark'
-                },
-                grid: {
-                    strokeDashArray: 4,
-                },
-                xaxis: {
-                    labels: {
-                        padding: 0,
-                    },
-                    tooltip: {
-                        enabled: false
-                    },
-                    axisBorder: {
-                        show: false,
-                    },
-                    type: 'datetime',
-                },
-                yaxis: {
-                    labels: {
-                        padding: 4
-                    },
-                },
-                labels: [
-                    '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
-                    '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
-                    '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
-                    '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
-                    '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
-                    '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
-                ],
-                colors: [tabler.getColor("primary")],
-                legend: {
-                    show: false,
-                },
-            })).render();
-        });
-        // @formatter:on
-    </script>
-@endpushonce
+        @pushonce('page-scripts')
+            <script>
+                // @formatter:off
+                document.addEventListener("DOMContentLoaded", function() {
+                    window.ApexCharts && (new ApexCharts(document.getElementById('chart-revenue-bg'), {
+                        chart: {
+                            type: "area",
+                            fontFamily: 'inherit',
+                            height: 40.0,
+                            sparkline: {
+                                enabled: true
+                            },
+                            animations: {
+                                enabled: false
+                            },
+                        },
+                        dataLabels: {
+                            enabled: false,
+                        },
+                        fill: {
+                            opacity: .16,
+                            type: 'solid'
+                        },
+                        stroke: {
+                            width: 2,
+                            lineCap: "round",
+                            curve: "smooth",
+                        },
+                        series: [{
+                            name: "Profits",
+                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
+                                53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67
+                            ]
+                        }],
+                        tooltip: {
+                            theme: 'dark'
+                        },
+                        grid: {
+                            strokeDashArray: 4,
+                        },
+                        xaxis: {
+                            labels: {
+                                padding: 0,
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                            axisBorder: {
+                                show: false,
+                            },
+                            type: 'datetime',
+                        },
+                        yaxis: {
+                            labels: {
+                                padding: 4
+                            },
+                        },
+                        labels: [
+                            '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
+                            '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
+                            '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
+                            '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
+                            '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
+                            '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
+                        ],
+                        colors: [tabler.getColor("primary")],
+                        legend: {
+                            show: false,
+                        },
+                    })).render();
+                });
+                // @formatter:on
+            </script>
+            <script>
+                // @formatter:off
+                document.addEventListener("DOMContentLoaded", function() {
+                    window.ApexCharts && (new ApexCharts(document.getElementById('chart-new-clients'), {
+                        chart: {
+                            type: "line",
+                            fontFamily: 'inherit',
+                            height: 40.0,
+                            sparkline: {
+                                enabled: true
+                            },
+                            animations: {
+                                enabled: false
+                            },
+                        },
+                        fill: {
+                            opacity: 1,
+                        },
+                        stroke: {
+                            width: [2, 1],
+                            dashArray: [0, 3],
+                            lineCap: "round",
+                            curve: "smooth",
+                        },
+                        series: [{
+                            name: "May",
+                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
+                                53, 61, 27, 54, 43, 4, 46, 39, 62, 51, 35, 41, 67
+                            ]
+                        }, {
+                            name: "April",
+                            data: [93, 54, 51, 24, 35, 35, 31, 67, 19, 43, 28, 36, 62, 61, 27, 39, 35,
+                                41, 27, 35, 51, 46, 62, 37, 44, 53, 41, 65, 39, 37
+                            ]
+                        }],
+                        tooltip: {
+                            theme: 'dark'
+                        },
+                        grid: {
+                            strokeDashArray: 4,
+                        },
+                        xaxis: {
+                            labels: {
+                                padding: 0,
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                            type: 'datetime',
+                        },
+                        yaxis: {
+                            labels: {
+                                padding: 4
+                            },
+                        },
+                        labels: [
+                            '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
+                            '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
+                            '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
+                            '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
+                            '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
+                            '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
+                        ],
+                        colors: [tabler.getColor("primary"), tabler.getColor("gray-600")],
+                        legend: {
+                            show: false,
+                        },
+                    })).render();
+                });
+                // @formatter:on
+            </script>
+            <script>
+                // @formatter:off
+                document.addEventListener("DOMContentLoaded", function() {
+                    window.ApexCharts && (new ApexCharts(document.getElementById('chart-active-users'), {
+                        chart: {
+                            type: "bar",
+                            fontFamily: 'inherit',
+                            height: 40.0,
+                            sparkline: {
+                                enabled: true
+                            },
+                            animations: {
+                                enabled: false
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                columnWidth: '50%',
+                            }
+                        },
+                        dataLabels: {
+                            enabled: false,
+                        },
+                        fill: {
+                            opacity: 1,
+                        },
+                        series: [{
+                            name: "Profits",
+                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93,
+                                53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67
+                            ]
+                        }],
+                        tooltip: {
+                            theme: 'dark'
+                        },
+                        grid: {
+                            strokeDashArray: 4,
+                        },
+                        xaxis: {
+                            labels: {
+                                padding: 0,
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                            axisBorder: {
+                                show: false,
+                            },
+                            type: 'datetime',
+                        },
+                        yaxis: {
+                            labels: {
+                                padding: 4
+                            },
+                        },
+                        labels: [
+                            '2024-06-20', '2024-06-21', '2024-06-22', '2024-06-23', '2024-06-24',
+                            '2024-06-25', '2024-06-26', '2024-06-27', '2024-06-28', '2024-06-29',
+                            '2024-06-30', '2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04',
+                            '2024-07-05', '2024-07-06', '2024-07-07', '2024-07-08', '2024-07-09',
+                            '2024-07-10', '2024-07-11', '2024-07-12', '2024-07-13', '2024-07-14',
+                            '2024-07-15', '2024-07-16', '2024-07-17', '2024-07-18', '2024-07-19'
+                        ],
+                        colors: [tabler.getColor("primary")],
+                        legend: {
+                            show: false,
+                        },
+                    })).render();
+                });
+                // @formatter:on
+            </script>
+        @endpushonce

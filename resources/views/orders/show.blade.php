@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div>
                         <h3 class="card-title">
-                            {{ __('Detalle de venta') }}
+                            {{ __('Detalle de salida') }}
                         </h3>
                     </div>
 
@@ -33,7 +33,7 @@
                                         @method('put')
 
                                         <button type="submit" class="dropdown-item text-success"
-                                            onclick="return confirm('¿Está seguro de que desea aprobar esta compra?')">
+                                            onclick="return confirm('¿Está seguro de que desea aprobar esta entrada?')">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-check" width="24" height="24"
                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         @endif
-                        
+
                         <x-action.close route="{{ route('orders.index') }}" />
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="row row-cards mb-3">
                         <div class="col">
                             <label for="order_date" class="form-label required">
-                                {{ __('Fecha de compra') }}
+                                {{ __('Fecha de entrada') }}
                             </label>
                             <input type="text" id="order_date" class="form-control"
                                 value="{{ $order->order_date->format('d-m-Y') }}" disabled>
@@ -142,15 +142,15 @@
                                     <td class="text-center">{{ number_format($order->due, 2) }}</td>
                                 </tr>
                                 <!-- <tr>
-                                    <td colspan="6" class="text-end">IVA</td>
-                                    <td class="text-center">{{ number_format($order->vat, 2) }}</td>
-                                </tr> -->
+                                            <td colspan="6" class="text-end">IVA</td>
+                                            <td class="text-center">{{ number_format($order->vat, 2) }}</td>
+                                        </tr> -->
                                 <tr>
                                     <td colspan="6" class="text-end">Total</td>
                                     <td class="text-center">{{ number_format($order->total, 2) }}</td>
                                 </tr>
                                 <tr>
-                                <td colspan="6" class="text-end">Estado</td>
+                                    <td colspan="6" class="text-end">Estado</td>
                                     <td class="text-center">
                                         <x-status dot
                                             color="{{ $order->order_status === \App\Enums\OrderStatus::COMPLETE ? 'green' : ($order->order_status === \App\Enums\OrderStatus::PENDING ? 'orange' : '') }}"
@@ -171,8 +171,8 @@
                             @csrf
 
                             <button type="submit" class="btn btn-success"
-                                onclick="return confirm('¿Estás de que quieres completar esta venta?')">
-                                {{ __('Completar venta') }}
+                                onclick="return confirm('¿Estás de que quieres completar esta salida?')">
+                                {{ __('Completar salida') }}
                             </button>
                         </form>
                     @endif

@@ -21,9 +21,6 @@ class ProductExportController extends Controller
             'No. de Unidad',
             'Código de producto',
             'Cantidad de stock',
-            "Alerta de stock",
-            'Precio de compra',
-            'Precio de venta',
             // 'Product Image',
             "Nota"
         );
@@ -35,10 +32,7 @@ class ProductExportController extends Controller
                 'No. Categoría' => $product->category_id,
                 'No. Unidad' => $product->unit_id,
                 'Código de producto' => $product->code,
-                'Inventario' => $product->quantity,
-                "Alerta de inventario" => $product->quantity_alert,
-                'Precio de compra' => $product->buying_price,
-                'Precio de venta' => $product->selling_price,
+                'inventario' => $product->quantity,
                 // 'Foto de producto' => $product->product_image,
                 "Nota" => $product->note
             );

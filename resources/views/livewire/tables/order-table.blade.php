@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Ventas') }}
+                {{ __('Salidas') }}
             </h3>
         </div>
 
@@ -119,7 +119,7 @@
                                 route="{{ route('order.downloadInvoice', $order->uuid) }}" />
                             @if ($order->order_status === \App\Enums\OrderStatus::PENDING)
                                 <x-button.delete class="btn-icon" route="{{ route('orders.cancel', $order) }}"
-                                    onclick="return confirm('¿Está seguro de cancelar la orden de venta No. {{ $order->invoice_no }} ?')" />
+                                    onclick="return confirm('¿Está seguro de cancelar la orden de salida No. {{ $order->invoice_no }} ?')" />
                             @endif
                         </td>
                     </tr>
@@ -136,7 +136,7 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Mostrando <span>{{ $orders->firstItem() }}</span> 
+            Mostrando <span>{{ $orders->firstItem() }}</span>
             de <span>{{ $orders->lastItem() }}</span> de
             <span>{{ $orders->total() }}</span> registros
         </p>
