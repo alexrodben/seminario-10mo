@@ -8,22 +8,21 @@
     'id' => '' ?? $name,
     'placeholder' => '',
     'data',
-    'value'
+    'value',
 ])
 
 <div class="col-md-4">
-    <label for="{{ $id }}" class="form-label required" >
+    <label for="{{ $id }}" class="form-label required">
         {{ $label }}
     </label>
 
     <select id="{{ $id }}" name="{{ $name }}" placeholder="{{ $placeholder }}" autocomplete="off"
-            class="form-control form-select @error($name) is-invalid @enderror"
-    >
+        class="form-control form-select @error($name) is-invalid @enderror">
         <option value="">
             Selecciona un cliente...
         </option>
 
-        @foreach($data as $option)
+        @foreach ($data as $option)
             <option value="{{ $option->id }}" @selected(old($name, $value = '' ?? null) == $option->id)>
                 {{ $option->name }}
             </option>
@@ -31,9 +30,9 @@
     </select>
 
     @error($name)
-    <div class="invalid-feedback">
-        {{ $message }}
-    </div>
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
     @enderror
 </div>
 
@@ -41,7 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 
     <script>
-        new TomSelect("#{{ $id }}",{
+        new TomSelect("#{{ $id }}", {
             create: true,
             sortField: {
                 field: "text",
@@ -51,11 +50,11 @@
     </script>
 @endpushonce
 
-{{--- ---}}
-{{---
+{{-- - - --}}
+{{-- -
 <div class="col-md-4">
     <label class="small my-1" for="supplier_id">
-        {{ __('Proveedor') }}
+        {{ __('Donador') }}
         <span class="text-danger">*</span>
     </label>
 
@@ -77,4 +76,4 @@
     </div>
     @enderror
 </div>
----}}
+- --}}

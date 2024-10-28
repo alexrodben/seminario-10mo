@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Proveedores') }}
+                {{ __('Donadores') }}
             </h3>
         </div>
 
@@ -28,105 +28,72 @@
             <div class="ms-auto text-secondary">
                 Buscar:
                 <div class="ms-2 d-inline-block">
-                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
+                    <input type="text" wire:model.live="search" class="form-control form-control-sm"
+                        aria-label="Search invoice">
                 </div>
             </div>
         </div>
     </div>
 
-    <x-spinner.loading-spinner/>
+    <x-spinner.loading-spinner />
 
     <div class="table-responsive">
         <table wire:loading.remove class="table table-bordered card-table table-vcenter text-nowrap datatable">
             <thead class="thead-light">
-            <tr>
-                <th class="align-middle text-center w-1">
-                    {{ __('No.') }}
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Nombre') }}
-                        @include('inclues._sort-icon', ['field' => 'name'])
-                    </a>
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('email')" href="#" role="button">
-                        {{ __('Correo electrónico') }}
-                        @include('inclues._sort-icon', ['field' => 'email'])
-                    </a>
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('shopname')" href="#" role="button">
-                        {{ __('Nombre de tienda') }}
-                        @include('inclues._sort-icon', ['field' => 'shopname'])
-                    </a>
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('type')" href="#" role="button">
-                        {{ __('Tipo de proveedor') }}
-                        @include('inclues._sort-icon', ['field' => 'type'])
-                    </a>
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('created_at')" href="#" role="button">
-                        {{ __('Creado') }}
-                        @include('inclues._sort-icon', ['field' => 'created_at'])
-                    </a>
-                </th>
-                <th scope="col" class="align-middle text-center">
-                    {{ __('Acción') }}
-                </th>
-            </tr>
+                <tr>
+                    <th class="align-middle text-center w-1">
+                        {{ __('No.') }}
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('name')" href="#" role="button">
+                            {{ __('Nombre') }}
+                            @include('inclues._sort-icon', ['field' => 'name'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('email')" href="#" role="button">
+                            {{ __('Correo electrónico') }}
+                            @include('inclues._sort-icon', ['field' => 'email'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        {{ __('Acción') }}
+                    </th>
+                </tr>
             </thead>
             <tbody>
-            @forelse ($suppliers as $supplier)
-                <tr>
-                    <td class="align-middle text-center">
-                        {{ $loop->index }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $supplier->name }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $supplier->email }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $supplier->shopname }}
-                    </td>
-                    <td class="align-middle text-center">
-                    <span class="badge bg-primary text-white text-uppercase">
-                        {{ $supplier->type->label() }}
-                        </span>
-                    </td>
-                    <td class="align-middle text-center">
-                        <span class="">
-                            {{ $supplier->created_at->diffForHumans() }}
-                        </span>
-                    </td>
-                    <td class="align-middle text-center">
-                        <x-button.show class="btn-icon" route="{{ route('suppliers.show', $supplier->uuid) }}"/>
-                        <x-button.edit class="btn-icon" route="{{ route('suppliers.edit', $supplier->uuid) }}"/>
-                        <x-button.delete 
-                            class="btn-icon" 
-                            route="{{ route('suppliers.destroy', $supplier->uuid) }}" 
-                            onclick="return confirm('¿Estás de eliminar proveedor {{ $supplier->name }}?')"
-                        />
-                    </td>
-                </tr>
-            @empty
-                <tr>
-                    <td class="align-middle text-center" colspan="8">
-                        No se encontraron resultados
-                    </td>
-                </tr>
-            @endforelse
+                @forelse ($suppliers as $supplier)
+                    <tr>
+                        <td class="align-middle text-center">
+                            {{ $loop->index }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $supplier->name }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $supplier->email }}
+                        </td>
+                        <td class="align-middle text-center">
+                            <x-button.show class="btn-icon" route="{{ route('suppliers.show', $supplier->uuid) }}" />
+                            <x-button.edit class="btn-icon" route="{{ route('suppliers.edit', $supplier->uuid) }}" />
+                            <x-button.delete class="btn-icon" route="{{ route('suppliers.destroy', $supplier->uuid) }}"
+                                onclick="return confirm('¿Estás de eliminar donador {{ $supplier->name }}?')" />
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td class="align-middle text-center" colspan="8">
+                            No se encontraron resultados
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Mostrando <span>{{ $suppliers->firstItem() }}</span> 
+            Mostrando <span>{{ $suppliers->firstItem() }}</span>
             de <span>{{ $suppliers->lastItem() }}</span> de <span>{{ $suppliers->total() }}</span> registros
         </p>
 

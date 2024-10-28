@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 use App\Http\Requests\Customer\UpdateCustomerRequest;
-use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Storage;
 use Str;
 
 class CustomerController extends Controller
@@ -33,7 +33,7 @@ class CustomerController extends Controller
         if ($request->hasFile('photo')) {
             $image = $request->file('photo')->store('customers', 'public');
         }
-        
+
         Customer::create([
             'user_id' => auth()->id(),
             'uuid' => Str::uuid(),
@@ -41,7 +41,6 @@ class CustomerController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'shopname' => $request->shopname,
             'type' => $request->type,
             'account_holder' => $request->account_holder,
             'account_number' => $request->account_number,
@@ -97,7 +96,6 @@ class CustomerController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'shopname' => $request->shopname,
             'type' => $request->type,
             'account_holder' => $request->account_holder,
             'account_number' => $request->account_number,

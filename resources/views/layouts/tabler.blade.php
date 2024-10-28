@@ -371,7 +371,7 @@
                                                     </svg>
                                                 </span>
                                                 <span class="nav-link-title">
-                                                    {{ __('Donantes') }}
+                                                    {{ __('Beneficiarios') }}
                                                 </span>
                                             </a>
                                         </div>

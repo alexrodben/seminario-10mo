@@ -86,7 +86,7 @@
 
                             <div class="col">
                                 <label for="supplier" class="small mb-1">
-                                    {{ __('Proveedor') }}
+                                    {{ __('Donador') }}
                                 </label>
                                 <input type="text" id="supplier" class="form-control"
                                     value="{{ $purchase->supplier->name }}" disabled>

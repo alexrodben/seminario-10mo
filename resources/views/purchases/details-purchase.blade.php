@@ -26,7 +26,7 @@
             <div class="col-xl-12">
                 <div class="card mb-4">
                     <div class="card-header">
-                        Imformación de proveedor
+                        Imformación de donador
                     </div>
                     <div class="card-body">
                         <!-- Form Row -->

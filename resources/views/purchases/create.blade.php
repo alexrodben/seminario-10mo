@@ -56,8 +56,8 @@
                                         </div>
 
 
-                                        <x-tom-select label="Proveedor" id="supplier_id" name="supplier_id"
-                                            placeholder="Elige proveedor" :data="$suppliers" />
+                                        <x-tom-select label="Donador" id="supplier_id" name="supplier_id"
+                                            placeholder="Elige donador" :data="$suppliers" />
 
                                         <div class="col-md-4">
                                             <label for="reference" class="form-label required">

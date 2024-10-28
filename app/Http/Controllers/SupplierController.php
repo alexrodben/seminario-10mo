@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Supplier;
 use App\Http\Requests\Supplier\StoreSupplierRequest;
 use App\Http\Requests\Supplier\UpdateSupplierRequest;
-use Str;
+use Illuminate\Support\Str;
 
 class SupplierController extends Controller
 {
@@ -37,17 +37,12 @@ class SupplierController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'shopname' => $request->shopname,
-            'type' => $request->type,
-            'account_holder' => $request->account_holder,
-            'account_number' => $request->account_number,
-            'bank_name' => $request->bank_name,
-            'address' => $request->address,
+            'notes' => $request->notes,
         ]);
 
         return redirect()
             ->route('suppliers.index')
-            ->with('success', 'Proveedor creado');
+            ->with('success', 'Donador creado');
     }
 
     public function show($uuid)
@@ -91,17 +86,12 @@ class SupplierController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'photo' => $image,
-            'shopname' => $request->shopname,
-            'type' => $request->type,
-            'account_holder' => $request->account_holder,
-            'account_number' => $request->account_number,
-            'bank_name' => $request->bank_name,
-            'address' => $request->address,
+            'notes' => $request->notes,
         ]);
 
         return redirect()
             ->route('suppliers.index')
-            ->with('success', 'Proveedor actualizado');
+            ->with('success', 'Donador actualizado');
     }
 
     public function destroy($uuid)

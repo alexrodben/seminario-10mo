@@ -20,13 +20,9 @@ class Supplier extends Model
         'name',
         'email',
         'phone',
-        'address',
-        'shopname',
+        'notes',
         'type',
         'photo',
-        'account_holder',
-        'account_number',
-        'bank_name',
         "user_id",
         "uuid"
     ];
@@ -47,11 +43,10 @@ class Supplier extends Model
         $query->where('name', 'like', "%{$value}%")
             ->orWhere('email', 'like', "%{$value}%")
             ->orWhere('phone', 'like', "%{$value}%")
-            ->orWhere('shopname', 'like', "%{$value}%")
             ->orWhere('type', 'like', "%{$value}%");
     }
 
-     /**
+    /**
      * Get the user that owns the Category
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

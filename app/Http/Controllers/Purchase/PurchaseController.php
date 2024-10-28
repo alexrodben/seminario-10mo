@@ -25,7 +25,7 @@ class PurchaseController extends Controller
     public function index()
     {
         return view('purchases.index', [
-            'purchases' => Purchase::where('user_id',auth()->id())->count()
+            'purchases' => Purchase::where('user_id', auth()->id())->count()
         ]);
     }
 
@@ -41,7 +41,7 @@ class PurchaseController extends Controller
 
     public function show($uuid)
     {
-        $purchase = Purchase::where('id',$uuid)->firstOrFail();
+        $purchase = Purchase::where('id', $uuid)->firstOrFail();
         // N+1 Problem if load 'createdBy', 'updatedBy',
         $purchase->loadMissing(['supplier', 'details'])->get();
 
@@ -56,7 +56,7 @@ class PurchaseController extends Controller
 
     public function edit($uuid)
     {
-        $purchase = Purchase::where('uuid',$uuid)->firstOrFail();
+        $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
         // N+1 Problem if load 'createdBy', 'updatedBy',
         $purchase->with(['supplier', 'details'])->get();
 
@@ -68,8 +68,8 @@ class PurchaseController extends Controller
     public function create()
     {
         return view('purchases.create', [
-            'categories' => Category::where('user_id',auth()->id())->select(['id', 'name'])->get(),
-            'suppliers' => Supplier::where('user_id',auth()->id())->select(['id', 'name'])->get(),
+            'categories' => Category::where('user_id', auth()->id())->select(['id', 'name'])->get(),
+            'suppliers' => Supplier::where('user_id', auth()->id())->select(['id', 'name'])->get(),
         ]);
     }
 
@@ -77,8 +77,8 @@ class PurchaseController extends Controller
     {
         if ($request->invoiceProducts == null || $request->invoiceProducts[0]['total'] == 0) {
             return redirect()
-            ->back()
-            ->with('error', 'Por favor, agrega un producto');
+                ->back()
+                ->with('error', 'Por favor, agrega un producto');
         }
         $purchase = Purchase::create([
             'purchase_no' => IdGenerator::generate([
@@ -87,31 +87,29 @@ class PurchaseController extends Controller
                 'length' => 10,
                 'prefix' => 'PRS-'
             ]),
-            'status'     => PurchaseStatus::PENDING->value,
+            'status' => PurchaseStatus::PENDING->value,
             'created_by' => auth()->user()->id,
-            'supplier_id.required' =>$request->required,
-            'supplier_id'   =>$request->supplier_id,
-            'date'          =>$request->date,
-            'total_amount'  =>$request->total_amount,
-            'uuid'=>Str::uuid(),
-            'user_id'=>auth()->id()
+            'supplier_id.required' => $request->required,
+            'supplier_id' => $request->supplier_id,
+            'date' => $request->date,
+            'total_amount' => $request->total_amount,
+            'uuid' => Str::uuid(),
+            'user_id' => auth()->id()
         ]);
 
         /*
          * TODO: Must validate that
          */
-        if (! $request->invoiceProducts == null)
-        {
+        if (!$request->invoiceProducts == null) {
             $pDetails = [];
 
-            foreach ($request->invoiceProducts as $product)
-            {
-                $pDetails['purchase_id']    = $purchase['id'];
-                $pDetails['product_id']     = $product['product_id'];
-                $pDetails['quantity']       = $product['quantity'];
-                $pDetails['unitcost']       = intval($product['unitcost']);
-                $pDetails['total']          = $product['total'];
-                $pDetails['created_at']     = Carbon::now();
+            foreach ($request->invoiceProducts as $product) {
+                $pDetails['purchase_id'] = $purchase['id'];
+                $pDetails['product_id'] = $product['product_id'];
+                $pDetails['quantity'] = $product['quantity'];
+                $pDetails['unitcost'] = intval($product['unitcost']);
+                $pDetails['total'] = $product['total'];
+                $pDetails['created_at'] = Carbon::now();
 
                 //PurchaseDetails::insert($pDetails);
                 $purchase->details()->insert($pDetails);
@@ -125,13 +123,12 @@ class PurchaseController extends Controller
 
     public function update($uuid)
     {
-        $purchase =Purchase::where('uuid',$uuid)->firstOrFail();
+        $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
         $products = PurchaseDetails::where('purchase_id', $purchase->id)->get();
 
-        foreach ($products as $product)
-        {
+        foreach ($products as $product) {
             Product::where('id', $product->product_id)
-                    ->update(['quantity' => DB::raw('quantity+'.$product->quantity)]);
+                ->update(['quantity' => DB::raw('quantity+' . $product->quantity)]);
         }
 
         Purchase::findOrFail($purchase->id)
@@ -147,7 +144,7 @@ class PurchaseController extends Controller
 
     public function destroy($uuid)
     {
-        $purchase = Purchase::where('uuid',$uuid)->firstOrFail();
+        $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
         $purchase->delete();
 
         return redirect()
@@ -189,15 +186,15 @@ class PurchaseController extends Controller
             ->join('products', 'purchase_details.product_id', '=', 'products.id')
             ->join('purchases', 'purchase_details.purchase_id', '=', 'purchases.id')
             ->join('users', 'users.id', '=', 'purchases.created_by')
-            ->whereBetween('purchases.updated_at',[$sDate,$eDate])
-            ->where('purchases.status','1')
-            ->select( 'purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id','products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total', 'users.name as created_by')
+            ->whereBetween('purchases.updated_at', [$sDate, $eDate])
+            ->where('purchases.status', '1')
+            ->select('purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id', 'products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total', 'users.name as created_by')
             ->get();
 
-        $purchase_array [] = array(
+        $purchase_array[] = array(
             'Fecha',
             'No. de Compra',
-            'Proveedor',
+            'Donador',
             'Código de producto',
             'Producto',
             'Cantidad',
@@ -206,8 +203,7 @@ class PurchaseController extends Controller
             'Creado por'
         );
 
-        foreach($purchases as $purchase)
-        {
+        foreach ($purchases as $purchase) {
             $purchase_array[] = array(
                 'Date' => $purchase->updated_at,
                 'No Purchase' => $purchase->purchase_no,

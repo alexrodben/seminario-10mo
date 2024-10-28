@@ -35,7 +35,7 @@
                                 <tr>
                                     <th scope="col" class="text-center">No.</th>
                                     <th scope="col" class="text-center">No. de Compra</th>
-                                    <th scope="col" class="text-center">Proveedor</th>
+                                    <th scope="col" class="text-center">Donador</th>
                                     <th scope="col" class="text-center">Fecha</th>
                                     <th scope="col" class="text-center">Total</th>
                                     <th scope="col" class="text-center">Acción</th>

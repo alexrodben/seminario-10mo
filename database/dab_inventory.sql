@@ -14,7 +14,6 @@ CREATE TABLE suppliers (
     email VARCHAR(50),
     phone VARCHAR(15),
     address VARCHAR(100),
-    shopname VARCHAR(50),
     type VARCHAR(15),
     bank_name VARCHAR(50),
     account_holder VARCHAR(50),
