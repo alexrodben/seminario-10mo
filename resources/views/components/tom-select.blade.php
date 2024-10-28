@@ -19,7 +19,7 @@
     <select id="{{ $id }}" name="{{ $name }}" placeholder="{{ $placeholder }}" autocomplete="off"
         class="form-control form-select @error($name) is-invalid @enderror">
         <option value="">
-            Selecciona un cliente...
+            Selecciona un beneficiario...
         </option>
 
         @foreach ($data as $option)

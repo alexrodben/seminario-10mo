@@ -63,7 +63,7 @@
                                 <tr>
                                     <th scope="col" class="text-center">{{ __('No.') }}</th>
                                     <th scope="col" class="text-center">{{ __('No. de comprobante') }}</th>
-                                    <th scope="col" class="text-center">{{ __('Cliente') }}</th>
+                                    <th scope="col" class="text-center">{{ __('Beneficiario') }}</th>
                                     <th scope="col" class="text-center">{{ __('Fecha') }}</th>
                                     <th scope="col" class="text-center">{{ __('Pago') }}</th>
                                     <th scope="col" class="text-center">{{ __('Total') }}</th>

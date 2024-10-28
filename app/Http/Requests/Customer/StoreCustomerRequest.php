@@ -24,12 +24,12 @@ class StoreCustomerRequest extends FormRequest
         return [
             'photo' => 'image|file|max:1024',
             'name' => 'required|string|max:50',
-            'email' => 'required|email|max:50',
+            'email' => 'email|max:50',
             'phone' => 'required|string|max:25',
-            'account_holder' => 'max:50',
-            'account_number' => 'max:25',
-            'bank_name' => 'max:25',
-            'address' => 'required|string|max:100',
+            'contact_name' => 'max:50',
+            'contact_number' => 'max:25',
+            'type' => 'max:25',
+            'notes' => 'required|string|max:100',
         ];
     }
 }

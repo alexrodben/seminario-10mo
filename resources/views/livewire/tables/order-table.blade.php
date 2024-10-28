@@ -52,7 +52,7 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('customer_id')" href="#" role="button">
-                            {{ __('Cliente') }}
+                            {{ __('Beneficiario') }}
                             @include('inclues._sort-icon', ['field' => 'customer_id'])
                         </a>
                     </th>

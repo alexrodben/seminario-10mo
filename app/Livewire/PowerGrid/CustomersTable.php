@@ -54,17 +54,17 @@ final class CustomersTable extends PowerGridComponent
             ->addColumn('id')
             ->addColumn('name')
 
-           /** Example of custom column using a closure **/
-            ->addColumn('name_lower', fn (Customer $model) => strtolower(e($model->name)))
+            /** Example of custom column using a closure **/
+            ->addColumn('name_lower', fn(Customer $model) => strtolower(e($model->name)))
 
             ->addColumn('email')
             ->addColumn('phone')
             ->addColumn('address')
             ->addColumn('photo')
-            ->addColumn('account_holder')
-            ->addColumn('account_number')
-            ->addColumn('bank_name')
-            ->addColumn('created_at_formatted', fn (Customer $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
+            ->addColumn('contact_name')
+            ->addColumn('contact_number')
+            ->addColumn('type')
+            ->addColumn('created_at_formatted', fn(Customer $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
     }
 
     public function columns(): array

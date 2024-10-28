@@ -42,7 +42,7 @@
                                 <tr>
                                     <th scope="col" class="text-center">No.</th>
                                     <th scope="col" class="text-center">No. de documento</th>
-                                    <th scope="col" class="text-center">Cliente</th>
+                                    <th scope="col" class="text-center">Beneficiario</th>
                                     <th scope="col" class="text-center">Fecha</th>
                                     <th scope="col" class="text-center">Pago</th>
                                     <th scope="col" class="text-center">Pagado</th>

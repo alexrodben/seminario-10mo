@@ -6,7 +6,7 @@
             <div class="row g-2 align-items-center mb-3">
                 <div class="col">
                     <h2 class="page-title">
-                        {{ __('Editar cliente') }}
+                        {{ __('Editar beneficiario') }}
                     </h2>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <!-- <h3 class="card-title">
-                                        {{ __('Foto del cliente') }}
-                                    </h3> -->
+                                                            {{ __('Foto del beneficiario') }}
+                                                        </h3> -->
 
                                     <img class="img-account-profile mb-2"
                                         src="{{ $customer->photo ? asset('storage/' . $customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}"
@@ -36,8 +36,8 @@
 
                                     <!-- <div class="small font-italic text-muted mb-2">Formato JPG o PNG no mayor a 2 MB</div>
 
-                                    <input class="form-control @error('photo') is-invalid @enderror" type="file"
-                                        id="image" name="photo" accept="image/*" onchange="previewImage();"> -->
+                                                        <input class="form-control @error('photo') is-invalid @enderror" type="file"
+                                                            id="image" name="photo" accept="image/*" onchange="previewImage();"> -->
 
                                     @error('photo')
                                         <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">
-                                        {{ __('Editar cliente') }}
+                                        {{ __('Editar beneficiario') }}
                                     </h3>
 
                                     <div class="row row-cards">
@@ -64,33 +64,36 @@
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
-                                            <x-input label="Teléfono" name="phone" :value="old('phone', $customer->phone)"
-                                                :required="true" />
+                                            <x-input label="Teléfono" name="phone" :value="old('phone', $customer->phone)" :required="true" />
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
-                                            <label for="bank_name" class="form-label">
-                                                {{ __('Medio de pago') }}
+                                            <label for="type" class="form-label">
+                                                {{ __('Tipo de beneficiario') }}
                                             </label>
 
-                                            <select class="form-select @error('bank_name') is-invalid @enderror"
-                                                id="bank_name" name="bank_name">
-                                                <option selected="" disabled>Elige medio de pago:</option>
-                                                <option value="Efectivo"
-                                                    @if (old('bank_name', $customer->bank_name) == 'Efectivo') selected="selected" @endif>Efectivo
+                                            <select
+                                                class="form-select form-control-solid @error('type') is-invalid @enderror"
+                                                id="type" name="type">
+                                                <option selected="" disabled="">Elige tipo de beneficiario:</option>
+                                                <option value="Iglesia"
+                                                    @if (old('type') == 'Iglesia') selected="selected" @endif>Iglesia
                                                 </option>
-                                                <option value="BAC"
-                                                    @if (old('bank_name', $customer->bank_name) == 'BAC') selected="selected" @endif>BAC
+                                                <option value="Escuela"
+                                                    @if (old('type') == 'Escuela') selected="selected" @endif>Escuela
                                                 </option>
-                                                <option value="Industrial"
-                                                    @if (old('bank_name', $customer->bank_name) == 'Industrial') selected="selected" @endif>Industrial
+                                                <option value="Particuales"
+                                                    @if (old('type') == 'Particuales') selected="selected" @endif>Particuales
                                                 </option>
-                                                <option value="Banrural"
-                                                    @if (old('bank_name', $customer->bank_name) == 'Banrural') selected="selected" @endif>Banrural
+                                                <option value="Mujeres"
+                                                    @if (old('type') == 'Mujeres') selected="selected" @endif>Mujeres
+                                                </option>
+                                                <option value="Otros"
+                                                    @if (old('type') == 'Otros') selected="selected" @endif>Otros
                                                 </option>
                                             </select>
 
-                                            @error('bank_name')
+                                            @error('type')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -98,24 +101,24 @@
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
-                                            <x-input label="Nombre del titular" name="account_holder" :value="old('account_holder', $customer->account_holder)"
+                                            <x-input label="Contacto nombre" name="contact_name" :value="old('contact_name', $customer->contact_name)"
                                                 :required="true" />
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
-                                            <x-input label="No. de cuenta" name="account_number" :value="old('account_number', $customer->account_number)"
+                                            <x-input label="Contacto numero" name="contact_number" :value="old('contact_number', $customer->contact_number)"
                                                 :required="true" />
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="address" class="form-label required">
+                                                <label for="notes" class="form-label required">
                                                     {{ __('Dirección') }}
                                                 </label>
 
-                                                <textarea id="address" name="address" rows="3" class="form-control @error('address') is-invalid @enderror">{{ old('address', $customer->address) }}</textarea>
+                                                <textarea id="notes" name="notes" rows="3" class="form-control @error('notes') is-invalid @enderror">{{ old('notes', $customer->notes) }}</textarea>
 
-                                                @error('address')
+                                                @error('notes')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>

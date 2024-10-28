@@ -34,7 +34,6 @@ class UpdateCustomerRequest extends FormRequest
                 'max:50'
             ],
             'email' => [
-                'required',
                 'email',
                 'max:50'
             ],
@@ -43,17 +42,16 @@ class UpdateCustomerRequest extends FormRequest
                 'string',
                 'max:25'
             ],
-            'account_holder' => [
+            'contact_name' => [
                 'max:50'
             ],
-            'account_number' => [
+            'contact_number' => [
                 'max:25'
             ],
-            'bank_name' => [
+            'type' => [
                 'max:25'
             ],
-            'address' => [
-                'required',
+            'notes' => [
                 'string',
                 'max:100'
             ],

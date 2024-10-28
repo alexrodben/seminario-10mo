@@ -6,7 +6,7 @@ use App\Models\Customer;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 use App\Http\Requests\Customer\UpdateCustomerRequest;
 use Illuminate\Support\Facades\Storage;
-use Str;
+use Illuminate\Support\Str;
 
 class CustomerController extends Controller
 {
@@ -42,15 +42,15 @@ class CustomerController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'type' => $request->type,
-            'account_holder' => $request->account_holder,
-            'account_number' => $request->account_number,
-            'bank_name' => $request->bank_name,
-            'address' => $request->address,
+            'contact_name' => $request->contact_name,
+            'contact_number' => $request->contact_number,
+            'type' => $request->type,
+            'notes' => $request->notes,
         ]);
 
         return redirect()
             ->route('customers.index')
-            ->with('success', 'Cliente agregado');
+            ->with('success', 'Beneficiario agregado');
     }
 
     public function show($uuid)
@@ -90,22 +90,22 @@ class CustomerController extends Controller
             $image = $request->file('photo')->store('customers', 'public');
         }
 
-        // Actualizamos el cliente con los nuevos datos
+        // Actualizamos el beneficiario con los nuevos datos
         $customer->update([
             'photo' => $image,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'type' => $request->type,
-            'account_holder' => $request->account_holder,
-            'account_number' => $request->account_number,
-            'bank_name' => $request->bank_name,
-            'address' => $request->address,
+            'contact_name' => $request->contact_name,
+            'contact_number' => $request->contact_number,
+            'type' => $request->type,
+            'notes' => $request->notes,
         ]);
 
         return redirect()
             ->route('customers.index')
-            ->with('success', 'Cliente actualizado');
+            ->with('success', 'Beneficiario actualizado');
     }
 
     public function destroy($uuid)
@@ -116,11 +116,11 @@ class CustomerController extends Controller
             Storage::disk('public')->delete($customer->photo);
         }
 
-        // Eliminamos el cliente
+        // Eliminamos el beneficiario
         $customer->delete();
 
         return redirect()
             ->back()
-            ->with('success', 'Cliente eliminado');
+            ->with('success', 'Beneficiario eliminado');
     }
 }

@@ -99,7 +99,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="subheader">Nuevos clientes</div>
+                                <div class="subheader">Nuevos beneficiarios</div>
                                 <div class="ms-auto lh-1">
                                     <div class="dropdown">
                                         <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Últimos 7 días</a>

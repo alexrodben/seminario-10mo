@@ -15,9 +15,9 @@ CREATE TABLE suppliers (
     phone VARCHAR(15),
     address VARCHAR(100),
     type VARCHAR(15),
-    bank_name VARCHAR(50),
-    account_holder VARCHAR(50),
-    account_number VARCHAR(50),
+    type VARCHAR(50),
+    contact_name VARCHAR(50),
+    contact_number VARCHAR(50),
     photo VARCHAR(50)
 );
 
@@ -28,9 +28,9 @@ CREATE TABLE customers (
     phone VARCHAR(15),
     address VARCHAR(100),
     type VARCHAR(15),
-    bank_name VARCHAR(50),
-    account_holder VARCHAR(50),
-    account_number VARCHAR(50),
+    type VARCHAR(50),
+    contact_name VARCHAR(50),
+    contact_number VARCHAR(50),
     photo VARCHAR(50)
 );
 

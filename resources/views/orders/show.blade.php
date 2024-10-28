@@ -73,7 +73,7 @@
 
                         <div class="col">
                             <label for="customer" class="form-label required">
-                                {{ __('Cliente') }}
+                                {{ __('Beneficiario') }}
                             </label>
                             <input type="text" id="customer" class="form-control" value="{{ $order->customer->name }}"
                                 disabled>
@@ -142,9 +142,9 @@
                                     <td class="text-center">{{ number_format($order->due, 2) }}</td>
                                 </tr>
                                 <!-- <tr>
-                                            <td colspan="6" class="text-end">IVA</td>
-                                            <td class="text-center">{{ number_format($order->vat, 2) }}</td>
-                                        </tr> -->
+                                                <td colspan="6" class="text-end">IVA</td>
+                                                <td class="text-center">{{ number_format($order->vat, 2) }}</td>
+                                            </tr> -->
                                 <tr>
                                     <td colspan="6" class="text-end">Total</td>
                                     <td class="text-center">{{ number_format($order->total, 2) }}</td>

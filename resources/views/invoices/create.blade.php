@@ -51,7 +51,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-50">
-                                    <h4 class="inv-title-1">Cliente</h4>
+                                    <h4 class="inv-title-1">Beneficiario</h4>
                                     <p class="inv-from-1">{{ $customer->name }}</p>
                                     <p class="inv-from-1">{{ $customer->phone }}</p>
                                     <p class="inv-from-1">{{ $customer->email }}</p>
@@ -149,7 +149,7 @@
                                 <div class="mb-3">
                                     <input type="hidden" name="customer_id" value="{{ $customer->id }}">
 
-                                    <x-input.index label="Cliente" name="customer" value="{{ $customer->name }}"
+                                    <x-input.index label="Beneficiario" name="customer" value="{{ $customer->name }}"
                                         disabled />
                                 </div>
                             </div>

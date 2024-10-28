@@ -40,7 +40,7 @@
 
                                     <div class="col-md-4">
                                         <label class="small mb-1" for="customer_id">
-                                            {{ __('Cliente') }}
+                                            {{ __('Beneficiario') }}
                                             <span class="text-danger">*</span>
                                         </label>
 
@@ -48,7 +48,7 @@
                                             class="form-select form-control-solid @error('customer_id') is-invalid @enderror"
                                             id="customer_id" name="customer_id">
                                             <option selected="" disabled="">
-                                                Elige un cliente:
+                                                Elige un beneficiario:
                                             </option>
 
                                             @foreach ($customers as $customer)
@@ -133,8 +133,8 @@
                                                         {{ $item->price }}
                                                     </td>
                                                     <!-- <td class="text-center">
-                                                    {{ $item->subtotal }}
-                                                </td> -->
+                                                            {{ $item->subtotal }}
+                                                        </td> -->
                                                     <td class="text-center">
                                                         <form action="{{ route('pos.deleteCartItem', $item->rowId) }}"
                                                             method="POST">
@@ -175,17 +175,17 @@
                                                 </td>
                                             </tr>
                                             <!-- <tr>
-                                                <td colspan="4" class="text-end">Subtotal</td>
-                                                <td class="text-center">
-                                                    {{ Cart::subtotal() }}
-                                                </td>
-                                            </tr> -->
+                                                        <td colspan="4" class="text-end">Subtotal</td>
+                                                        <td class="text-center">
+                                                            {{ Cart::subtotal() }}
+                                                        </td>
+                                                    </tr> -->
                                             <!-- <tr>
-                                                <td colspan="4" class="text-end">Impuesto</td>
-                                                <td class="text-center">
-                                                    {{ Cart::tax() }}
-                                                </td>
-                                            </tr> -->
+                                                        <td colspan="4" class="text-end">Impuesto</td>
+                                                        <td class="text-center">
+                                                            {{ Cart::tax() }}
+                                                        </td>
+                                                    </tr> -->
                                             <tr>
                                                 <td colspan="4" class="text-end">Total</td>
                                                 <td class="text-center">

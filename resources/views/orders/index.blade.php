@@ -24,7 +24,7 @@
                 <x-slot:th>
                     <x-table.th>{{ __('No.') }}</x-table.th>
                     <x-table.th>{{ __('No. de comprobante') }}</x-table.th>
-                    <x-table.th>{{ __('Cliente') }}</x-table.th>
+                    <x-table.th>{{ __('Beneficiario') }}</x-table.th>
                     <x-table.th>{{ __('Fecha') }}</x-table.th>
                     <x-table.th>{{ __('Pago') }}</x-table.th>
                     <x-table.th>{{ __('Total') }}</x-table.th>

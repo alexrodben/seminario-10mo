@@ -23,14 +23,12 @@
                         <div class="card">
                             <div class="card-body">
                                 <!-- <h3 class="card-title">
-                                    {{ __('Foto de perfil') }}
-                                </h3> -->
+                                                            {{ __('Foto de perfil') }}
+                                                        </h3> -->
 
-                                <img id="image-preview"
-                                     class="img-account-profile mb-2"
-                                     src="{{ $customer->photo ? asset('storage/' . $customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}"
-                                     alt=""
-                                >
+                                <img id="image-preview" class="img-account-profile mb-2"
+                                    src="{{ $customer->photo ? asset('storage/' . $customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}"
+                                    alt="">
                             </div>
                         </div>
                     </div>
@@ -39,52 +37,65 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    {{ __('Información del cliente') }}
+                                    {{ __('Información del beneficiario') }}
                                 </h3>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered card-table table-vcenter text-nowrap datatable">
                                     <tbody>
-                                    <tr>
-                                        <td>Nombre</td>
-                                        <td>{{ $customer->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Correo electrónico</td>
-                                        <td>{{ $customer->email }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Teléfono</td>
-                                        <td>{{ $customer->phone }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dirección</td>
-                                        <td>{{ $customer->address }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre de titular</td>
-                                        <td>{{ $customer->account_holder }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>No. de cuenta</td>
-                                        <td>{{ $customer->account_number }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Medio de pago</td>
-                                        <td>{{ $customer->bank_name }}</td>
-                                    </tr>
+                                        <tr>
+                                            <td>Nombre</td>
+                                            <td>{{ $customer->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Correo electrónico</td>
+                                            <td>{{ $customer->email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Teléfono</td>
+                                            <td>{{ $customer->phone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dirección</td>
+                                            <td>{{ $customer->notes }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contacto nombre</td>
+                                            <td>{{ $customer->contact_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contacto numero</td>
+                                            <td>{{ $customer->contact_number }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tipo de beneficiario</td>
+                                            <td>{{ $customer->type }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
 
                             <div class="card-footer text-end">
                                 <a class="btn btn-info" href="{{ route('customers.index') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left"
+                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M5 12l14 0" />
+                                        <path d="M5 12l6 6" />
+                                        <path d="M5 12l6 -6" />
+                                    </svg>
                                     {{ __('Atrás') }}
                                 </a>
 
                                 <a class="btn btn-warning" href="{{ route('customers.edit', $customer->uuid) }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil"
+                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                                        <path d="M13.5 6.5l4 4" />
+                                    </svg>
                                     {{ __('Editar') }}
                                 </a>
                             </div>

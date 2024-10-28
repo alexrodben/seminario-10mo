@@ -51,7 +51,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-50">
-                                    <h4 class="inv-title-1">Cliente</h4>
+                                    <h4 class="inv-title-1">Beneficiario</h4>
                                     <p class="inv-from-1">{{ $customer->name }}</p>
                                     <p class="inv-from-1">{{ $customer->phone }}</p>
                                     <p class="inv-from-1">{{ $customer->email }}</p>
