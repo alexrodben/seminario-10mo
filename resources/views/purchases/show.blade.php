@@ -153,14 +153,6 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                        <tr>
-                                            <td class="align-middle text-end" colspan="7">
-                                                Total
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                {{ number_format($purchase->total_amount, 2) }}
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

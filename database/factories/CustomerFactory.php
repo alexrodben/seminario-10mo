@@ -22,10 +22,8 @@ class CustomerFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->unique()->phoneNumber(),
-            'notes' => fake()->notes(),
             'contact_name' => fake()->name(),
-            'contact_number' => fake()->randomNumber(8, true),
-            'type' => fake()->randomElement(['BAC', 'INDUSTRIAL', 'PROMERICA', 'BANRURAL', 'BAM', 'AZTECA']),
+            'contact_number' => fake()->phoneNumber(),
         ];
     }
 }

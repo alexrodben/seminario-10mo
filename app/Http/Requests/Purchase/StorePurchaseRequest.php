@@ -16,9 +16,8 @@ class StorePurchaseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'supplier_id'   => 'required',
-            'date'          => 'required|string',
-            'total_amount'  => 'required|numeric',
+            'supplier_id' => 'required',
+            'date' => 'required|string',
         ];
     }
 

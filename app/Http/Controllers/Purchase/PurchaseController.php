@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
-use Str;
+use Illuminate\Support\Str;
 
 class PurchaseController extends Controller
 {
@@ -75,11 +75,6 @@ class PurchaseController extends Controller
 
     public function store(StorePurchaseRequest $request)
     {
-        if ($request->invoiceProducts == null || $request->invoiceProducts[0]['total'] == 0) {
-            return redirect()
-                ->back()
-                ->with('error', 'Por favor, agrega un producto');
-        }
         $purchase = Purchase::create([
             'purchase_no' => IdGenerator::generate([
                 'table' => 'purchases',
@@ -92,7 +87,6 @@ class PurchaseController extends Controller
             'supplier_id.required' => $request->required,
             'supplier_id' => $request->supplier_id,
             'date' => $request->date,
-            'total_amount' => $request->total_amount,
             'uuid' => Str::uuid(),
             'user_id' => auth()->id()
         ]);
@@ -107,8 +101,6 @@ class PurchaseController extends Controller
                 $pDetails['purchase_id'] = $purchase['id'];
                 $pDetails['product_id'] = $product['product_id'];
                 $pDetails['quantity'] = $product['quantity'];
-                $pDetails['unitcost'] = intval($product['unitcost']);
-                $pDetails['total'] = $product['total'];
                 $pDetails['created_at'] = Carbon::now();
 
                 //PurchaseDetails::insert($pDetails);
@@ -188,7 +180,7 @@ class PurchaseController extends Controller
             ->join('users', 'users.id', '=', 'purchases.created_by')
             ->whereBetween('purchases.updated_at', [$sDate, $eDate])
             ->where('purchases.status', '1')
-            ->select('purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id', 'products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total', 'users.name as created_by')
+            ->select('purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id', 'products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'users.name as created_by')
             ->get();
 
         $purchase_array[] = array(
@@ -198,8 +190,6 @@ class PurchaseController extends Controller
             'Código de producto',
             'Producto',
             'Cantidad',
-            'Precio unitario',
-            'Total',
             'Creado por'
         );
 
@@ -211,8 +201,6 @@ class PurchaseController extends Controller
                 'Product Code' => $purchase->code,
                 'Product' => $purchase->name,
                 'Quantity' => $purchase->quantity,
-                'Unitcost' => $purchase->unitcost,
-                'Total' => $purchase->total,
                 'Created By' => $purchase->created_by
             );
         }

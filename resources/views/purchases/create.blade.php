@@ -79,8 +79,6 @@
                                 </div>
 
                                 <div class="card-footer text-end">
-                                    {{-- - onclick="return confirm('¿Estás de entradar?')" - --}}
-                                    {{-- - @disabled($errors->isNotEmpty()) - --}}
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Agregar') }}
                                     </button>

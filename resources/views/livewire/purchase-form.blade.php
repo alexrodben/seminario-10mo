@@ -4,8 +4,6 @@
             <tr>
                 <th class="align-middle">Producto</th>
                 <th class="align-middle text-center">Cantidad</th>
-                <th class="align-middle text-center">Precio</th>
-                <th class="align-middle text-center">Total</th>
                 <th class="align-middle text-center">Acción</th>
             </tr>
         </thead>
@@ -53,23 +51,6 @@
                         @endif
                     </td>
 
-                    {{-- - Unit Price - --}}
-                    <td class="align-middle text-center">
-                        @if ($invoiceProduct['is_saved'])
-                            {{ $unit_cost = number_format($invoiceProduct['product_price'], 2) }}
-
-                            <input type="hidden" name="invoiceProducts[{{ $index }}][unitcost]"
-                                value="{{ $unit_cost }}">
-                        @endif
-                    </td>
-
-                    {{-- - Total - --}}
-                    <td class="align-middle text-center">
-                        {{ $product_total = $invoiceProduct['product_price'] * $invoiceProduct['quantity'] }}
-
-                        <input type="hidden" name="invoiceProducts[{{ $index }}][total]"
-                            value="{{ $product_total }}">
-                    </td>
 
                     <td class="align-middle text-center">
                         @if ($invoiceProduct['is_saved'])
@@ -115,7 +96,7 @@
                 </tr>
             @endforeach
             <tr>
-                <td colspan="4"></td>
+                <td colspan="2"></td>
                 <td class="text-center">
                     <button type="button" wire:click="addProduct" class="btn btn-icon btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
@@ -128,41 +109,6 @@
                     </button>
                 </td>
             </tr>
-            <tr>
-                <th colspan="4" class="align-middle text-end">
-                    Subtotal
-                </th>
-                <td class="text-center">
-                    {{--                    ${{ number_format($subtotal, 2) }} --}}
-                    {{ Number::currency($subtotal, 'QTZ') }}
-                </td>
-            </tr>
-            <tr>
-                <th colspan="4" class="align-middle text-end">
-                    Impuesto
-                </th>
-                <td width="150" class="align-middle text-center">
-                    <input wire:model.blur="taxes" type="number" id="taxes" class="form-control w-75 d-inline"
-                        min="0" max="100">
-                    %
-
-                    @error('taxes')
-                        <em class="invalid-feedback">
-                            {{ $message }}
-                        </em>
-                    @enderror
-                </td>
-            </tr>
-            <tr>
-                <th colspan="4" class="align-middle text-end">
-                    Total
-                </th>
-                <td class="text-center">
-                    {{ Number::currency($total, 'QTZ') }}
-                    <input type="hidden" name="total_amount" value="{{ $total }}">
-                </td>
-            </tr>
-
         </tbody>
     </table>
 </div>

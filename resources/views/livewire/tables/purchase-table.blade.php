@@ -63,12 +63,6 @@
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        <a wire:click.prevent="sortBy('total_amount')" href="#" role="button">
-                            {{ __('Total') }}
-                            @include('inclues._sort-icon', ['field' => 'total_amount'])
-                        </a>
-                    </th>
-                    <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('status')" href="#" role="button">
                             {{ __('Estado') }}
                             @include('inclues._sort-icon', ['field' => 'status'])
@@ -93,9 +87,6 @@
                         </td>
                         <td class="align-middle text-center">
                             {{ $purchase->date->format('d-m-Y') }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ Number::currency($purchase->total_amount, 'QTZ') }}
                         </td>
 
                         @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)

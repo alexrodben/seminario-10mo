@@ -15,8 +15,6 @@ class PurchaseDetails extends Model
         'purchase_id',
         'product_id',
         'quantity',
-        'unitcost',
-        'total',
     ];
 
     protected $casts = [

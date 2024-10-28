@@ -21,7 +21,6 @@ return new class extends Migration {
             $table->string('photo')->nullable();
             $table->string('contact_name')->nullable();
             $table->string('contact_number')->nullable();
-            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
