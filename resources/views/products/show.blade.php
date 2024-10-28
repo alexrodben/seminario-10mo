@@ -32,39 +32,6 @@
                             </div>
                         </div>
                     </div>
-                    <!---
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        Product Code
-                                    </div>
-                                    <div class="row row-cards">
-                                        <div class="col-md-6">
-                                            <label class="small mb-1">
-                                                Product code
-                                            </label>
-
-                                            <div class="form-control">
-                                                {{ $product->code }}
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 align-middle">
-                                            <label class="small mb-1">
-                                                Barcode
-                                            </label>
-
-                                            <div class="mt-1">
-                                                {!! $barcode !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        --->
-
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-header">
@@ -88,10 +55,6 @@
                                             <td>{{ $product->code }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Código de barras</td>
-                                            <td>{!! $barcode !!}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Categoría</td>
                                             <td>
                                                 <a href="{{ route('categories.show', $product->category) }}"
@@ -105,7 +68,7 @@
                                             <td>
                                                 <a href="{{ route('units.show', $product->unit) }}"
                                                     class="badge bg-blue-lt">
-                                                    {{ $product->unit->short_code }}
+                                                    {{ $product->unit->name }}
                                                 </a>
                                             </td>
                                         </tr>
@@ -113,14 +76,6 @@
                                         <tr>
                                             <td>Cantidad de stock</td>
                                             <td>{{ $product->quantity }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alerta de cantidad de stock</td>
-                                            <td>
-                                                <span class="badge bg-red-lt">
-                                                    {{ $product->quantity_alert }}
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>{{ __('Notas') }}</td>

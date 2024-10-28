@@ -87,7 +87,6 @@
                                             <tr>
                                                 <th scope="col">{{ __('Producto') }}</th>
                                                 <th scope="col" class="text-center">{{ __('Cantidad') }}</th>
-                                                <th scope="col" class="text-center">{{ __('Precio') }}</th>
                                                 <th scope="col" class="text-center">{{ __('Acción') }}</th>
                                                 <th scope="col" class="text-center">{{ __('Detalles') }}</th>
                                             </tr>
@@ -129,12 +128,9 @@
                                                             </div>
                                                         </form>
                                                     </td>
-                                                    <td class="text-center">
-                                                        {{ $item->price }}
-                                                    </td>
                                                     <!-- <td class="text-center">
-                                                            {{ $item->subtotal }}
-                                                        </td> -->
+                                                                {{ $item->subtotal }}
+                                                            </td> -->
                                                     <td class="text-center">
                                                         <form action="{{ route('pos.deleteCartItem', $item->rowId) }}"
                                                             method="POST">
@@ -175,17 +171,17 @@
                                                 </td>
                                             </tr>
                                             <!-- <tr>
-                                                        <td colspan="4" class="text-end">Subtotal</td>
-                                                        <td class="text-center">
-                                                            {{ Cart::subtotal() }}
-                                                        </td>
-                                                    </tr> -->
+                                                            <td colspan="4" class="text-end">Subtotal</td>
+                                                            <td class="text-center">
+                                                                {{ Cart::subtotal() }}
+                                                            </td>
+                                                        </tr> -->
                                             <!-- <tr>
-                                                        <td colspan="4" class="text-end">Impuesto</td>
-                                                        <td class="text-center">
-                                                            {{ Cart::tax() }}
-                                                        </td>
-                                                    </tr> -->
+                                                            <td colspan="4" class="text-end">Impuesto</td>
+                                                            <td class="text-center">
+                                                                {{ Cart::tax() }}
+                                                            </td>
+                                                        </tr> -->
                                             <tr>
                                                 <td colspan="4" class="text-end">Total</td>
                                                 <td class="text-center">
@@ -223,7 +219,6 @@
                                                 <th scope="col">Nombre</th>
                                                 <th scope="col">Cantidad</th>
                                                 <th scope="col">Unidad</th>
-                                                <th scope="col">Precio</th>
                                                 <th scope="col">Acción</th>
                                             </tr>
                                         </thead>
@@ -245,9 +240,6 @@
                                                     </td>
                                                     <td class="text-center">
                                                         {{ $product->unit->name }}
-                                                    </td>
-                                                    <td class="text-center">
-                                                        {{ number_format($product->selling_price, 2) }}
                                                     </td>
                                                     <td>
                                                         <div class="d-flex">
